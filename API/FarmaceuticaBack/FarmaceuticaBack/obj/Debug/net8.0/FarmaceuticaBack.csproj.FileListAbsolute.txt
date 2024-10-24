@@ -1,0 +1,13 @@
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.csproj.AssemblyReference.cache
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.AssemblyInfoInputs.cache
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.AssemblyInfo.cs
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.sourcelink.json
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\bin\Debug\net8.0\FarmaceuticaBack.deps.json
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\bin\Debug\net8.0\FarmaceuticaBack.dll
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\bin\Debug\net8.0\FarmaceuticaBack.pdb
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.dll
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\refint\FarmaceuticaBack.dll
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\FarmaceuticaBack.pdb
+C:\Users\franc\OneDrive\Escritorio\Apuntes UTN\Programación II\TPI\Programacion_II_TPI\API\FarmaceuticaBack\FarmaceuticaBack\obj\Debug\net8.0\ref\FarmaceuticaBack.dll

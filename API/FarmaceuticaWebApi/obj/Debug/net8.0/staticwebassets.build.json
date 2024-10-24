@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "NlEgRWzv9qxK+DxA5tcUirjZo1DVLSobEvYusVhsdpA=",
+  "Source": "FarmaceuticaWebApi",
+  "BasePath": "_content/FarmaceuticaWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
