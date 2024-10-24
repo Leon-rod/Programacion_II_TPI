@@ -15,6 +15,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString
 
 builder.Services.AddScoped<IMedicamentoRepository, MedicamentoRepository>();
 builder.Services.AddScoped<IMedicamentoService, MedicamentoService>();
+builder.Services.AddScoped<IStockRepository, StockRepository>();
+builder.Services.AddScoped<IStockService, StockService>();
 
 
 builder.Services.AddControllers();

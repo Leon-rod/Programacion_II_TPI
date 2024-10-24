@@ -1,0 +1,54 @@
+[
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
+    "Method": "GetMedicamentos",
+    "RelativePath": "api/Medicamento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.StockController",
+    "Method": "GetByEstablishment",
+    "RelativePath": "Establishment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.StockController",
+    "Method": "GetByEstablishmentArticle",
+    "RelativePath": "Establishment/Articles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "product",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "medicine",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
