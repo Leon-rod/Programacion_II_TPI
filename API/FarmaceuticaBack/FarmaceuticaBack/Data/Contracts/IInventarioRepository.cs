@@ -17,6 +17,7 @@ namespace FarmaceuticaBack.Data.Contracts
 
         Task<List<Inventario>> GetInventarioByPedido(int idPedido, DateTime from, DateTime to);
 
+
         Task<bool> CreateInventario(Inventario inv);
 
         Task<bool> UpdateInventario(Inventario inv);

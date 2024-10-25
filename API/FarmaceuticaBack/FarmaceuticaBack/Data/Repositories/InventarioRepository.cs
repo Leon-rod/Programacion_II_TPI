@@ -32,7 +32,9 @@ namespace FarmaceuticaBack.Data.Repositories
             if(from == null || from == DateTime.MinValue || to == null || to == DateTime.MinValue)
             {
                 return await _context.Inventarios
-                    .Where(i => i.IdFactura == idFactura)
+                                     .Include(d => d.Dispensacione)
+                                     .Include(f => f.Dispensacione.IdFacturaNavigation)
+                                     .Where(i => i.IdFactura == idFactura)
                     .ToListAsync();
             }
             else
@@ -41,9 +43,11 @@ namespace FarmaceuticaBack.Data.Repositories
                 DateOnly toDateOnly = DateOnly.FromDateTime(to);
 
                 return await _context.Inventarios
+                                     .Include(d => d.Dispensacione)
+                                     .Include(f => f.Dispensacione.IdFacturaNavigation)
                                      .Where(i => i.IdFactura == idFactura
-                                                 ||( i.Fecha >= fromDateOnly
-                                                 && i.Fecha <= toDateOnly))
+                                                 ||( i.Dispensacione.IdFacturaNavigation.Fecha >= fromDateOnly
+                                                 && i.Dispensacione.IdFacturaNavigation.Fecha <= toDateOnly))
                                      .ToListAsync();
             }
                                 
@@ -63,9 +67,11 @@ namespace FarmaceuticaBack.Data.Repositories
                 DateOnly toDateOnly = DateOnly.FromDateTime(to);
 
                 return await _context.Inventarios
+                                     .Include(d => d.DetallesPedido)
+                                     .Include(f => f.DetallesPedido.IdPedidoNavigation)
                                      .Where(i => i.IdPedido == idPedido
-                                                 || (i.Fecha >= fromDateOnly
-                                                 && i.Fecha <= toDateOnly))
+                                                 || (i.DetallesPedido.IdPedidoNavigation.Fecha >= fromDateOnly
+                                                 && i.Dispensacione.IdFacturaNavigation.Fecha <= toDateOnly))
                                      .ToListAsync();
             }
         }

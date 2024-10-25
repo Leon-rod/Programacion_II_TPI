@@ -26,12 +26,11 @@ public partial class Inventario
 
     public DateOnly? Fecha { get; set; }
 
-    [JsonIgnore]
     public virtual DetallesPedido DetallesPedido { get; set; }
-    [JsonIgnore]
+
     public virtual Dispensacion Dispensacione { get; set; }
-    [JsonIgnore]
+
     public virtual Stock IdStockNavigation { get; set; }
-    [JsonIgnore]
+
     public virtual TiposMovimiento IdTipoMovNavigation { get; set; }
 }

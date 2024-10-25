@@ -31,6 +31,12 @@ namespace FarmaceuticaWebApi.Controllers
 
                 if (inventario != null)
                 {
+                    foreach(Inventario i in inventario)
+                    {
+                        i.DetallesPedido = null;
+                        i.IdTipoMovNavigation = null;
+                        i.IdStockNavigation = null; 
+                    }
                     return Ok(inventario);
                 }
                 else

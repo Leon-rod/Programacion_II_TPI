@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -15,8 +16,9 @@ public partial class Factura
 
     public DateOnly? Fecha { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Dispensacion> Dispensaciones { get; set; } = new List<Dispensacion>();
-
+    [JsonIgnore]
     public virtual ICollection<FacturasTiposPago> FacturasTiposPagos { get; set; } = new List<FacturasTiposPago>();
 
     public virtual Cliente IdClienteNavigation { get; set; }
