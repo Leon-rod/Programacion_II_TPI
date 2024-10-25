@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.EstablecimientoController",
+    "Method": "Get",
+    "RelativePath": "api/Establecimiento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
     "Method": "GetMedicamentos",
     "RelativePath": "api/Medicamento",

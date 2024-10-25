@@ -17,6 +17,8 @@ builder.Services.AddScoped<IMedicamentoRepository, MedicamentoRepository>();
 builder.Services.AddScoped<IMedicamentoService, MedicamentoService>();
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IStockService, StockService>();
+builder.Services.AddScoped<IEstablecimientoRepository, EstablecimientoRepository>();
+builder.Services.AddScoped<IEstablecimientoService, EstablecimientoService>();
 
 
 builder.Services.AddControllers();
