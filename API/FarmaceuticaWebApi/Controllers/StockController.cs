@@ -18,13 +18,25 @@ namespace FarmaceuticaWebApi.Controllers
         public async Task<IActionResult> GetByEstablishment([FromQuery]int id)
         {
             List<Stock> stocks = await _stockService.GetByEstablishment(id);
-            return Ok(stocks);
+            if (stocks.Count > 0)
+                return Ok(stocks);
+            return Ok("No se encuentran stocks cargados en esta sucursal");
         }
         [HttpGet("/Establishment/Articles")]
         public async Task<IActionResult> GetByEstablishmentArticle([FromQuery]int id, [FromQuery]string? product, [FromQuery] string? medicine)
         {
             List<Stock> stocks = await _stockService.GetByEstablishmentAndArticle(id, product, medicine);
-            return Ok(stocks);
+            if (stocks.Count > 0)
+            {
+                foreach (Stock stock in stocks)
+                {
+                    stock.IdProductoNavigation = null;
+                    stock.IdMedicamentoLoteNavigation = null;
+                    stock.IdEstablecimientoNavigation = null;
+                }
+                return Ok(stocks);
+            }
+            return Ok("No se encuentran registros de stocks de ese articulo para ese establecimiento");
         }
     }
 }
