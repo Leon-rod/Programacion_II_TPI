@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -25,11 +26,12 @@ public partial class Inventario
 
     public DateOnly? Fecha { get; set; }
 
+    [JsonIgnore]
     public virtual DetallesPedido DetallesPedido { get; set; }
-
+    [JsonIgnore]
     public virtual Dispensacion Dispensacione { get; set; }
-
+    [JsonIgnore]
     public virtual Stock IdStockNavigation { get; set; }
-
+    [JsonIgnore]
     public virtual TiposMovimiento IdTipoMovNavigation { get; set; }
 }
