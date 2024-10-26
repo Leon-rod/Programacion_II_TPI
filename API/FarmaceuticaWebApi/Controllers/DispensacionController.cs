@@ -30,10 +30,10 @@ namespace FarmaceuticaWebApi.Controllers
             else
                 foreach (Dispensacion dis in dispensacion)
                 {
-                    if(dis.IdFactura <= id)
-                        id = dis.IdFactura + 1;
+                    if(dis.IdDispensacion <= id)
+                        id = dis.IdDispensacion + 1;
                 }
-            d.IdFactura = id;
+            d.IdDispensacion = id;
             bool result = await _service.Insert(d);
             if (result)
                 return Ok("Se ha agregado una dispensacion con exito!");
