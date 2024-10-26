@@ -52,13 +52,9 @@ namespace FarmaceuticaBack.Data.Repositories
         public async Task<Pedido> GetById(int id)
         {
             var p = await _context.Pedidos
-                .Include(p => p.DetallesPedidos)
-                .Include(p => p.DetallesPedidos)
-                .Include(p => p.DetallesPedidos)
-                .ThenInclude(p => p.IdMedicamentoLoteNavigation)
-                .ThenInclude(p => p.IdMedicamentoNavigation)
-                .Include(p => p.DetallesPedidos)
-                .ThenInclude(p => p.IdProductoNavigation)                
+                .Include(p => p.IdLogisticaNavigation)
+                .Include(p => p.IdPersonalCargosEstablecimientosNavigation)
+                .Include(p => p.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)               
                 .FirstOrDefaultAsync(p => p.IdPedido == id);
             
             return p;
@@ -68,6 +64,8 @@ namespace FarmaceuticaBack.Data.Repositories
         {
             var pedidos = await _context.Pedidos
                 .Include(c => c.IdLogisticaNavigation)
+                .Include(p => p.IdPersonalCargosEstablecimientosNavigation)
+                .Include(p => p.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)
                 .Where(e => e.IdLogisticaNavigation.Cuit == cuit)
                 .ToListAsync();
             return pedidos;
