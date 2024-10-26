@@ -15,7 +15,6 @@ public partial class Factura
     public int? IdPersonalCargosEstablecimientos { get; set; }
 
     public DateOnly? Fecha { get; set; }
-
     [JsonIgnore]
     public virtual ICollection<Dispensacion> Dispensaciones { get; set; } = new List<Dispensacion>();
     [JsonIgnore]

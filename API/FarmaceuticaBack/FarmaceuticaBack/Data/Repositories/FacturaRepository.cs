@@ -1,5 +1,6 @@
 ﻿using FarmaceuticaBack.Data.Contracts;
 using FarmaceuticaBack.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,29 +17,64 @@ namespace FarmaceuticaBack.Data.Repositories
             this._context = context;
         }
 
-        public Task<List<Factura>> GetAll()
+        public async Task<List<Factura>> GetAll()
         {
-            throw new NotImplementedException();
+            List<Factura> facturas = await _context.Facturas.ToListAsync();
+            return facturas;
         }
 
-        public Task<List<Factura>> GetByClient(int client)
+        public async Task<List<Factura>> GetByClient(int client)
         {
-            throw new NotImplementedException();
+            List<Factura> facturas = await _context.Facturas
+                .Where(f => f.IdCliente == client)
+                .ToListAsync();
+            return facturas;
         }
 
-        public Task<List<Factura>> GetByDates(DateOnly startDate, DateOnly endDate)
+        public async Task<List<Factura>> GetByDates(DateOnly startDate, DateOnly endDate)
         {
-            throw new NotImplementedException();
+            List<Factura> facturas = await _context.Facturas
+                .Where(f => f.Fecha >= startDate && f.Fecha <= endDate)
+                .ToListAsync();
+            return facturas;
         }
 
-        public Task<List<Factura>> GetByEmployee(int employee)
+        public async Task<List<Factura>> GetByEmployee(int employee)
         {
-            throw new NotImplementedException();
+            List<Factura> facturas = await _context.Facturas
+                .Include(f => f.IdPersonalCargosEstablecimientosNavigation)
+                .Include(f => f.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)
+                .Where(f => f.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation.IdPersonal == employee)
+                .ToListAsync();
+            return facturas;
         }
 
-        public Task<Factura> GetById(int id)
+        public async Task<List<Factura>> GetByEstablishment(int establishment)
         {
-            throw new NotImplementedException();
+            List<Factura> facturas = await _context.Facturas
+                .Include(f => f.IdPersonalCargosEstablecimientosNavigation)
+                .Include(f => f.IdPersonalCargosEstablecimientosNavigation.IdEstablecimientoNavigation)
+                .Where(f => f.IdPersonalCargosEstablecimientosNavigation.IdEstablecimientoNavigation.IdEstablecimiento == establishment)
+                .ToListAsync();
+            return facturas;
+        }
+
+        public async Task<Factura> GetById(int id)
+        {
+            Factura? factura = await _context.Facturas.FindAsync(id);
+            return factura;
+        }
+
+        public async Task<bool> Insert(Factura factura)
+        {
+            await _context.Facturas.AddAsync(factura);
+            return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<bool> Update(Factura factura)
+        {
+            _context.Facturas.Update(factura);
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }
