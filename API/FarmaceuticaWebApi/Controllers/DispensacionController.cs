@@ -40,9 +40,9 @@ namespace FarmaceuticaWebApi.Controllers
             return StatusCode(500, "Ha ocurrido un error al intentar agregar una dispensacion");
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete([FromQuery] int id)
+        public async Task<IActionResult> Delete([FromQuery] int idFactura, [FromQuery] int idDispensacion)
         {
-            bool result = await _service.Delete(id);
+            bool result = await _service.Delete(idFactura,idDispensacion);
             if (result)
                 return Ok("Se ha eliminado con exito una dispensacion de la base de datos1");
             return StatusCode(500, "Ha ocurrido un error al intentar eliminar una dispensacion");
