@@ -56,17 +56,17 @@ namespace FarmaceuticaWebApi.Controllers
 
         public async Task<IActionResult> GetInventarioByFilter(InventarioFiltro oFiltro)
         {
-            if ((oFiltro.IdFactura == 0 || oFiltro.GetType().GetProperty("IdFactura")?.PropertyType != typeof(int)) && oFiltro.IdFactura != null)
+            if ((oFiltro.IdFactura == 0 || oFiltro.GetType().GetProperty("IdFactura")?.PropertyType != typeof(int?)) && oFiltro.IdFactura != null)
             {
                 return BadRequest("El id factura no puede ser 0 y debe ser un entero");
             }
 
-            if ((oFiltro.IdPedido == 0 || oFiltro.GetType().GetProperty("IdPedido")?.PropertyType != typeof(int)) && oFiltro.IdFactura != null)
+            if ((oFiltro.IdPedido == 0 || oFiltro.GetType().GetProperty("IdPedido")?.PropertyType != typeof(int?)) && oFiltro.IdFactura != null)
             {
                 return BadRequest("El id pedido no puede ser 0 y debe ser un entero");
             }
 
-            if ((oFiltro.IdTipoMov == 0 || oFiltro.GetType().GetProperty("IdTipoMov")?.PropertyType != typeof(int)) && oFiltro.IdFactura != null)
+            if ((oFiltro.IdTipoMov == 0 || oFiltro.GetType().GetProperty("IdTipoMov")?.PropertyType != typeof(int?)) && oFiltro.IdFactura != null)
             {
                 return BadRequest("El id tipo movimiento no puede ser 0 y debe ser un entero");
             }
@@ -96,6 +96,60 @@ namespace FarmaceuticaWebApi.Controllers
             }
             catch (Exception exc)
             {
+                return StatusCode(500, "Error de servidor");
+            }
+
+        }
+
+
+        [HttpPost("Inventario")]
+
+        public async Task<IActionResult> CreateInventario(Inventario inv)
+        {
+            if(!(inv.IdFactura is int || inv.IdFactura is null))
+            {
+                return BadRequest("Si ingresa un numero de factura debe ser un entero");
+            }
+            
+            if (!(inv.IdPedido is int || inv.IdPedido is null))
+            {
+                return BadRequest("Si ingresa un numero de pedido debe ser un entero");
+            }
+
+            if (!(inv.IdDispensacion is int || inv.IdDispensacion is null))
+            {
+                return BadRequest("Si ingresa un numero de dispensacion debe ser un entero");
+            }
+
+            if (!(inv.IdDetallePedido is int || inv.IdDetallePedido is null))
+            {
+                return BadRequest("Si ingresa un numero de dispensacion debe ser un entero");
+            }
+
+            if(inv.IdTipoMov == null || inv.IdTipoMov == 0)
+            {
+                return BadRequest("Debe ingresar un tipo de movimiento y no puede ser 0");
+            }
+
+            if(inv.IdStock == null || inv.IdStock == 0)
+            {
+                return BadRequest("Debe ingresar un numero de stock y no puede ser 0");
+            }
+
+            try
+            {
+                if (await _inventarioService.CreateInventario(inv)) 
+                {
+                    return Ok("Inventario creado");
+                }
+                else
+                {
+                    return BadRequest("No se pudo. Revise los datos.");
+                }
+            }
+            catch (Exception)
+            {
+
                 return StatusCode(500, "Error de servidor");
             }
 

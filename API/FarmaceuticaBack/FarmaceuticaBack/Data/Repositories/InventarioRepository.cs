@@ -19,14 +19,32 @@ namespace FarmaceuticaBack.Data.Repositories
         {   
             _context = context;
         }
-        public Task<bool> CreateInventario(Inventario inv)
+        public async Task<bool> CreateInventario(Inventario inv)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            _context.Inventarios.AddAsync(inv);
+
+            if (await _context.SaveChangesAsync() > 0)
+            {
+                result = true;
+            }
+
+            return result;
+             
         }
 
         public async Task<List<Inventario>> GetAll()
         {
-            return await _context.Inventarios.ToListAsync() ;
+            return await _context.Inventarios
+                                      .Include(d => d.Dispensacione)
+                                     .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                     .Include(d => d.Dispensacione.IdProductoNavigation)
+                                     .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
+                                     .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                                     .Include(d => d.DetallesPedido.IdProductoNavigation)
+                                     .Include(d => d.DetallesPedido.IdPedidoNavigation)
+                                     .Include(d => d.IdTipoMovNavigation)
+                                        .ToListAsync() ;
         }
 
         public async Task<List<Inventario>> GetInventarioByFactura(int idFactura, DateTime from, DateTime to)
@@ -76,6 +94,7 @@ namespace FarmaceuticaBack.Data.Repositories
                         {
                             query = query.Include(d => d.Dispensacione)
                                          .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                         .Include(d => d.Dispensacione.IdProductoNavigation)
                                          .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
                                          .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
                                          .Include(d => d.DetallesPedido.IdProductoNavigation)
@@ -87,6 +106,7 @@ namespace FarmaceuticaBack.Data.Repositories
                         {
                             query = query.Include(d => d.Dispensacione)
                                          .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                         .Include(d => d.Dispensacione.IdProductoNavigation)
                                          .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
                                          .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
                                          .Include(d => d.DetallesPedido.IdProductoNavigation)
@@ -105,6 +125,7 @@ namespace FarmaceuticaBack.Data.Repositories
                     {
                         query = query.Include(d => d.Dispensacione)
                                      .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                     .Include(d => d.Dispensacione.IdProductoNavigation)
                                      .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
                                      .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
                                      .Include(d => d.DetallesPedido.IdProductoNavigation)
@@ -142,9 +163,5 @@ namespace FarmaceuticaBack.Data.Repositories
         }
 
 
-        public Task<bool> UpdateInventario(Inventario inv)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

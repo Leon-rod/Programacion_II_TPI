@@ -14,5 +14,7 @@ namespace FarmaceuticaBack.Data.Contracts
         Task<List<Pedido>> GetByFecha(DateTime fechaDesde, DateTime fechaHasta);
         Task<List<Pedido>> GetByLogistica(string id);
         Task<List<Pedido>> GetByEstablecimiento(int id);
+        Task<bool> Save(Pedido pedido);
+        Task<bool> Edit(Pedido pedido);
     }
 }
