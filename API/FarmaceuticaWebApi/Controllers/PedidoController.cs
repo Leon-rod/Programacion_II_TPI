@@ -33,5 +33,33 @@ namespace FarmaceuticaWebApi.Controllers
                 return StatusCode(500, "Error en el servidor..." + e);
             }
         }
+
+        [HttpGet("id")]
+        public async Task<IActionResult> GetPedidoId([FromQuery] int id)
+        {
+            try
+            {
+                if(id <= 0)
+                {
+                    return StatusCode(500, "Debe introducir un numero de pedido mayor a 0");
+                }
+                else
+                {
+                    var pedido = await _service.GetById(id);   
+                    if(pedido != null)
+                    {
+                        return Ok(pedido);
+                    }
+                    else
+                    {
+                        return StatusCode(500, "No existe ese numero de pedido");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Error en el servidor:" + e);
+            }
+        }
     }
 }

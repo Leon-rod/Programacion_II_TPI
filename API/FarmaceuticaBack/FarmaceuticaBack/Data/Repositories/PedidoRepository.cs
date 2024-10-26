@@ -53,9 +53,12 @@ namespace FarmaceuticaBack.Data.Repositories
         {
             var p = await _context.Pedidos
                 .Include(p => p.DetallesPedidos)
-                .ThenInclude(p => p.IdMedicamentoLoteNavigation)
                 .Include(p => p.DetallesPedidos)
-                .ThenInclude(p => p.IdProductoNavigation)
+                .Include(p => p.DetallesPedidos)
+                .ThenInclude(p => p.IdMedicamentoLoteNavigation)
+                .ThenInclude(p => p.IdMedicamentoNavigation)
+                .Include(p => p.DetallesPedidos)
+                .ThenInclude(p => p.IdProductoNavigation)                
                 .FirstOrDefaultAsync(p => p.IdPedido == id);
             
             return p;
