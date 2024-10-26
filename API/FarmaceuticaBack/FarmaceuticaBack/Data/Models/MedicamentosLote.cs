@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -16,7 +17,7 @@ public partial class MedicamentosLote
     public DateOnly FechaVencimiento { get; set; }
 
     public virtual ICollection<DetallesPedido> DetallesPedidos { get; set; } = new List<DetallesPedido>();
-
+    [JsonIgnore]
     public virtual ICollection<Dispensacion> Dispensaciones { get; set; } = new List<Dispensacion>();
 
     public virtual Medicamento IdMedicamentoNavigation { get; set; }
