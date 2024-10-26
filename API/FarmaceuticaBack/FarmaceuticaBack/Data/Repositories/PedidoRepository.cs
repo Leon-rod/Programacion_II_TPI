@@ -88,7 +88,7 @@ namespace FarmaceuticaBack.Data.Repositories
             int id = await _context.Pedidos.MaxAsync(p => p.IdPedido) + 1;
             pedido.IdPedido = id;
             
-            _context.AddAsync(pedido);
+            await _context.AddAsync(pedido);
             
             return await _context.SaveChangesAsync() > 0;
 
