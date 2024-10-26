@@ -18,19 +18,31 @@ namespace FarmaceuticaBack.Data.Repositories
             _context = context;
         }
 
+        public async Task<bool> Edit(Pedido pe)
+        {            
+            var pedido = await _context.Pedidos.FirstOrDefaultAsync(p => p.IdPedido == pe.IdPedido);
+            if (pedido != null)
+            {
+                pedido.Fecha = pe.Fecha;
+                pedido.IdLogistica = pe.IdLogistica;
+                pedido.IdPersonalCargosEstablecimientos = pe.IdPersonalCargosEstablecimientos;
+            }
+            return await _context.SaveChangesAsync() == 1;
+        }
+
         public async Task<List<Pedido>> GetAll()
         {
             var pedidos = await _context.Pedidos
                 .Include(c => c.IdPersonalCargosEstablecimientosNavigation)
                 .Include(c => c.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)
-                .Include(c => c.IdLogisticaNavigation)                
+                .Include(c => c.IdLogisticaNavigation)
                 .ToListAsync();
             return pedidos;
         }
 
         public async Task<List<Pedido>> GetByEstablecimiento(int id)
         {
-            var pedidos = await _context.Pedidos                
+            var pedidos = await _context.Pedidos
                 .Include(c => c.IdPersonalCargosEstablecimientosNavigation)
                 .Where(e => e.IdPersonalCargosEstablecimientosNavigation.IdEstablecimiento == id)
                 .ToListAsync();
@@ -54,9 +66,9 @@ namespace FarmaceuticaBack.Data.Repositories
             var p = await _context.Pedidos
                 .Include(p => p.IdLogisticaNavigation)
                 .Include(p => p.IdPersonalCargosEstablecimientosNavigation)
-                .Include(p => p.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)               
+                .Include(p => p.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)
                 .FirstOrDefaultAsync(p => p.IdPedido == id);
-            
+
             return p;
         }
 
@@ -69,6 +81,17 @@ namespace FarmaceuticaBack.Data.Repositories
                 .Where(e => e.IdLogisticaNavigation.Cuit == cuit)
                 .ToListAsync();
             return pedidos;
+        }
+
+        public async Task<bool> Save(Pedido pedido)
+        {
+            int id = await _context.Pedidos.MaxAsync(p => p.IdPedido) + 1;
+            pedido.IdPedido = id;
+            
+            _context.AddAsync(pedido);
+            
+            return await _context.SaveChangesAsync() > 0;
+
         }
     }
 }

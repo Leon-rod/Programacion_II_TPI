@@ -18,6 +18,11 @@ namespace FarmaceuticaBack.Services.Implementations
             _pedido = pedido;
         }
 
+        public async Task<bool> Edit(Pedido pedido)
+        {
+            return await _pedido.Edit(pedido);
+        }
+
         public async Task<List<Pedido>> GetAll()
         {
             return await _pedido.GetAll();
@@ -30,7 +35,7 @@ namespace FarmaceuticaBack.Services.Implementations
 
         public async Task<List<Pedido>> GetByFecha(DateTime fechaDesde, DateTime fechaHasta)
         {
-            return await GetByFecha(fechaDesde, fechaHasta);
+            return await _pedido.GetByFecha(fechaDesde, fechaHasta);
         }
 
         public async Task<Pedido> GetById(int id)
@@ -40,7 +45,12 @@ namespace FarmaceuticaBack.Services.Implementations
 
         public async Task<List<Pedido>> GetByLogistica(string id)
         {
-            return await _pedido.GetByLogistica(id); 
+            return await _pedido.GetByLogistica(id);
+        }
+
+        public async Task<bool> Save(Pedido pedido)
+        {
+            return await _pedido.Save(pedido);
         }
     }
 }
