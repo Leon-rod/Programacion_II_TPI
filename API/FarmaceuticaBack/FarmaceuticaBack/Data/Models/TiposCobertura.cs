@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -14,7 +15,7 @@ public partial class TiposCobertura
     public string Descripcion { get; set; }
 
     public decimal? Descuento { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Dispensacion> Dispensaciones { get; set; } = new List<Dispensacion>();
 
     public virtual ObraSocial IdObraSocialNavigation { get; set; }
