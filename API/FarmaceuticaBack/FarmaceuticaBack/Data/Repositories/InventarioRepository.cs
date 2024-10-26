@@ -21,16 +21,24 @@ namespace FarmaceuticaBack.Data.Repositories
         }
         public async Task<bool> CreateInventario(Inventario inv)
         {
-            bool result = false;
-            _context.Inventarios.AddAsync(inv);
+            string sql = @"
+                INSERT INTO INVENTARIOS (ID_FACTURA, ID_DISPENSACION, ID_PEDIDO, ID_DETALLE_PEDIDO, ID_TIPO_MOV, ID_STOCK, CANTIDAD, FECHA)
+                VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)";
 
-            if (await _context.SaveChangesAsync() > 0)
-            {
-                result = true;
-            }
+            int affectedRows = await _context.Database.ExecuteSqlRawAsync(
+                sql,
+                inv.IdFactura,
+                inv.IdDispensacion,
+                inv.IdPedido,
+                inv.IdDetallePedido,
+                inv.IdTipoMov,
+                inv.IdStock,
+                inv.Cantidad,
+                inv.Fecha
+            );
 
-            return result;
-             
+            return affectedRows > 0;
+
         }
 
         public async Task<List<Inventario>> GetAll()
