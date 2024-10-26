@@ -38,7 +38,7 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<List<Medicamento>> GetByFiltro(MedicamentoFiltro oFiltro)
         {
-            IQueryable<Medicamento> query = _context.Medicamentos.AsQueryable(); // Asumiendo que _context es tu DbContext
+            IQueryable<Medicamento> query = _context.Medicamentos.AsQueryable(); 
             Type t = oFiltro.GetType();
             PropertyInfo[] properties = t.GetProperties();
             foreach (PropertyInfo p in properties)
@@ -48,7 +48,7 @@ namespace FarmaceuticaBack.Data.Repositories
                 if (valor != null && valor != 0)
                 {
 
-                    // Crear el filtro según el nombre de la propiedad
+                    // chicos para que esto funcione el filtro tiene que tener el mismo nombre que la propiedad de la clase
                     query = query.Where(m => EF.Property<int>(m, p.Name) == valor);
                 }
             }
