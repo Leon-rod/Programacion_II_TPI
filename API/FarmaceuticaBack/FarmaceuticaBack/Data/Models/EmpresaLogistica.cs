@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -21,5 +22,6 @@ public partial class EmpresaLogistica
 
     public virtual Barrio IdBarrioNavigation { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }

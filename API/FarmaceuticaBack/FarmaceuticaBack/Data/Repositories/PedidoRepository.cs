@@ -20,7 +20,11 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<List<Pedido>> GetAll()
         {
-            var pedidos = await _context.Pedidos.ToListAsync();
+            var pedidos = await _context.Pedidos
+                .Include(c => c.IdPersonalCargosEstablecimientosNavigation)
+                .Include(c => c.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)
+                .Include(c => c.IdLogisticaNavigation)                
+                .ToListAsync();
             return pedidos;
         }
 
