@@ -16,9 +16,10 @@ namespace FarmaceuticaBack.Data.Repositories
         {
             this._context = context;
         }
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(int idFactura, int idDispensacion)
         {
-            Dispensacion? dispensacion = await _context.Dispensaciones.FindAsync(id);
+            Factura? factura = await _context.Facturas.FindAsync(idFactura);
+            Dispensacion? dispensacion = await _context.Dispensaciones.FindAsync(idDispensacion);
             if (dispensacion == null)
                 return await _context.SaveChangesAsync() > 0;
             _context.Dispensaciones.Remove(dispensacion);
