@@ -21,7 +21,7 @@ public partial class Producto
     public decimal Precio { get; set; }
 
     public bool? Activo { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<DetallesPedido> DetallesPedidos { get; set; } = new List<DetallesPedido>();
     [JsonIgnore]
     public virtual ICollection<Dispensacion> Dispensaciones { get; set; } = new List<Dispensacion>();

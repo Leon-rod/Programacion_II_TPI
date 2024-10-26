@@ -15,12 +15,12 @@ public partial class MedicamentosLote
     public string Lote { get; set; }
 
     public DateOnly FechaVencimiento { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<DetallesPedido> DetallesPedidos { get; set; } = new List<DetallesPedido>();
     [JsonIgnore]
     public virtual ICollection<Dispensacion> Dispensaciones { get; set; } = new List<Dispensacion>();
 
     public virtual Medicamento IdMedicamentoNavigation { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Stock> Stocks { get; set; } = new List<Stock>();
 }
