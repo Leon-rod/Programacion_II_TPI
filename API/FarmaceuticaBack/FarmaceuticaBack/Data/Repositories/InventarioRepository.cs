@@ -74,28 +74,38 @@ namespace FarmaceuticaBack.Data.Repositories
                         if(p.Name == "FechaDesde")
                         {
                             query = query.Include(d => d.Dispensacione)
-                                         .Include(f => f.Dispensacione.IdFacturaNavigation)
-                                         .Include(tp => tp.IdTipoMovNavigation)
-                                         .Where(m => m.Dispensacione.IdFacturaNavigation.Fecha >= valorDateOnly);
+                                         .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                         .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
+                                         .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                                         .Include(d => d.DetallesPedido.IdProductoNavigation)
+                                         .Include(d => d.IdTipoMovNavigation)                                        
+                                         .Where(d => d.Dispensacione.IdFacturaNavigation.Fecha >= valorDateOnly);
                         }
                         else
                         {
                             query = query.Include(d => d.Dispensacione)
-                                         .Include(f => f.Dispensacione.IdFacturaNavigation)
-                                         .Include(tp => tp.IdTipoMovNavigation)
-                                         .Where(m => m.Dispensacione.IdFacturaNavigation.Fecha <= valorDateOnly);
+                                         .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                         .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
+                                         .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                                         .Include(d => d.DetallesPedido.IdProductoNavigation)
+                                         .Include(d => d.IdTipoMovNavigation)
+                                         .Where(d => d.Dispensacione.IdFacturaNavigation.Fecha <= valorDateOnly);
                         }
 
                     }
                 }
-                else if (p.PropertyType == typeof(int))
+                else if (p.PropertyType == typeof(int?))
                 {
                     var valorInt = (int?)p.GetValue(oFiltro);
                     if (valorInt.HasValue && valorInt.Value != 0)
                     {
                         query = query.Include(d => d.Dispensacione)
-                                     .Include(f => f.Dispensacione.IdFacturaNavigation)
-                                     .Where(m => EF.Property<int>(m, p.Name) == valorInt.Value);
+                                     .Include(d => d.Dispensacione.IdFacturaNavigation)
+                                     .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation)
+                                     .Include(d => d.Dispensacione.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                                     .Include(d => d.DetallesPedido.IdProductoNavigation)
+                                     .Include(d => d.IdTipoMovNavigation)
+                                     .Where(d => EF.Property<int>(d, p.Name) == valorInt.Value);
                     }
                 }
             }
