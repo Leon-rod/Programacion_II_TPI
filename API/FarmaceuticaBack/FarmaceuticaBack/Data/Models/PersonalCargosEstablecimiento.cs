@@ -15,7 +15,7 @@ public partial class PersonalCargosEstablecimiento
     public int IdCargo { get; set; }
 
     public int IdEstablecimiento { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();
 
     public virtual Cargo IdCargoNavigation { get; set; }

@@ -27,7 +27,7 @@ public partial class Personal
     public string NroDoc { get; set; }
 
     public int? IdGenero { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Contacto> Contactos { get; set; } = new List<Contacto>();
 
     public virtual Barrio IdBarrioNavigation { get; set; }

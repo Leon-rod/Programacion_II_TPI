@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -26,7 +27,7 @@ public partial class Cliente
     public string NroDoc { get; set; }
 
     public int? IdGenero { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();
 
     public virtual Barrio IdBarrioNavigation { get; set; }

@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -12,6 +13,6 @@ public partial class TiposPago
     public string TipoPago { get; set; }
 
     public decimal? Descuento { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<FacturasTiposPago> FacturasTiposPagos { get; set; } = new List<FacturasTiposPago>();
 }

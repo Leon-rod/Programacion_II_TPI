@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -12,7 +13,7 @@ public partial class Provincia
     public string Provincia1 { get; set; }
 
     public int IdPais { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Ciudad> Ciudades { get; set; } = new List<Ciudad>();
 
     public virtual Pais IdPaisNavigation { get; set; }

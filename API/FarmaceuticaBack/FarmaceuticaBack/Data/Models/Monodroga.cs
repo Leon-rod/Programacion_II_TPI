@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -10,6 +11,6 @@ public partial class Monodroga
     public int IdMonodroga { get; set; }
 
     public string Monodroga1 { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
 }
