@@ -19,7 +19,5 @@ namespace FarmaceuticaBack.Services.Contracts
         Task<List<Inventario>> GetInventarioByFilter(InventarioFiltro oFiltro);
 
         Task<bool> CreateInventario(Inventario inv);
-
-        Task<bool> UpdateInventario(Inventario inv);
     }
 }

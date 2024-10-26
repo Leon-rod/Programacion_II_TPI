@@ -21,6 +21,5 @@ namespace FarmaceuticaBack.Data.Contracts
 
         Task<bool> CreateInventario(Inventario inv);
 
-        Task<bool> UpdateInventario(Inventario inv);
     }
 }

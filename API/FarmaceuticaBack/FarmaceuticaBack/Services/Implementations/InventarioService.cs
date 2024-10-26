@@ -19,9 +19,9 @@ namespace FarmaceuticaBack.Services.Implementations
             _repository = repository;
         }
 
-        public Task<bool> CreateInventario(Inventario inv)
+        public async Task<bool> CreateInventario(Inventario inv)
         {
-            throw new NotImplementedException();
+            return await _repository.CreateInventario(inv);
         }
 
         public async Task<List<Inventario>> GetAll()
@@ -45,10 +45,5 @@ namespace FarmaceuticaBack.Services.Implementations
             return await _repository.GetInventarioByPedido(idPedido, from, to);
         }
 
-
-        public Task<bool> UpdateInventario(Inventario inv)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
