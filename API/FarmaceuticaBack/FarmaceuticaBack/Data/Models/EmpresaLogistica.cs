@@ -17,7 +17,7 @@ public partial class EmpresaLogistica
     public string Numero { get; set; }
 
     public int IdBarrio { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Contacto> Contactos { get; set; } = new List<Contacto>();
 
     public virtual Barrio IdBarrioNavigation { get; set; }

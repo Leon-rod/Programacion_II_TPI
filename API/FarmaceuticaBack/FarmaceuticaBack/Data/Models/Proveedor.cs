@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -20,9 +21,9 @@ public partial class Proveedor
     public int IdBarrio { get; set; }
 
     public bool Activo { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Contacto> Contactos { get; set; } = new List<Contacto>();
-
+    [JsonIgnore]
     public virtual ICollection<DetallesPedido> DetallesPedidos { get; set; } = new List<DetallesPedido>();
 
     public virtual Barrio IdBarrioNavigation { get; set; }
