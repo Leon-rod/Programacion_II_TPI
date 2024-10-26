@@ -1,4 +1,5 @@
-﻿using FarmaceuticaBack.Models;
+﻿using Azure.Core;
+using FarmaceuticaBack.Models;
 using FarmaceuticaBack.Services.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,13 +16,11 @@ namespace FarmaceuticaWebApi.Controllers
         {
             _service = service;
         }
-        //Task<List<DetallesPedido>> GetByPedido(int id);
-        //Task<DetallesPedido> GetByDetallePedido(int idPedido, int idDetalleP);
+        
         //Task<bool> Delete(int idPedido, int idDetalleP);
-        //Task<bool> Save(DetallesPedido dp);
 
         [HttpGet]
-        public async Task<IActionResult> GetByPedido(int id)
+        public async Task<IActionResult> GetByPedido([FromQuery]int id)
         {
             try
             {
@@ -48,5 +47,97 @@ namespace FarmaceuticaWebApi.Controllers
             }
         }
 
+        [HttpGet("detallePedido")]
+        public async Task<IActionResult> GetByDetallePedido([FromQuery]int idPedido, [FromQuery]int idDetalleP)
+        {
+            try
+            {
+                if (idPedido > 0 && idDetalleP > 0)
+                {
+                    var pedido = await _service.GetByDetallePedido(idPedido, idDetalleP);
+                    if(pedido != null)
+                    {
+                        return Ok(pedido);
+                    }
+                    else
+                    {
+                        return StatusCode(500, "No existen detalle de pedido con esa característica");
+                    }
+                }
+                else
+                {
+                    return StatusCode(500, "Los parametros no son correctos, ambos deben ser mayores a 0");
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Error en el servidor:" + e);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Save([FromQuery]DetallesPedido dp)
+        {
+            try
+            {
+                if (ValidarDetalle(dp))
+                {
+                    if (await _service.Save(dp))
+                    {
+                        return Ok("Se guardo el detalle con exito");
+                    }
+                    else
+                    {
+                        return StatusCode(500, "Error al guardar el detalle de pedido");
+                    }
+                }
+                else
+                {
+                    return StatusCode(500, "Los datos del detalle no han pasado las validaciones");
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Error en el servidor:" + e);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteDetallePedido([FromQuery]int idPedido, [FromQuery]int idDetalleP)
+        {
+            try
+            {
+                if (idPedido > 0 && idDetalleP > 0)
+                {
+                    if (await _service.Delete(idPedido, idDetalleP))
+                    {
+                        return Ok("Pedido eliminado con exito");
+                    }
+                    else
+                    {
+                        return StatusCode(500, "No existen detalle de pedido con esa característica");
+                    }
+                }
+                else
+                {
+                    return StatusCode(500, "Los parametros no son correctos, ambos deben ser mayores a 0");
+                }
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, "Error en el servidor:" + e);
+            }
+        }
+
+        private bool ValidarDetalle(DetallesPedido dp)
+        {
+            bool aux = true;
+            if (dp.IdPedido < 1 || dp.IdDetallePedido < 1 || dp.Cantidad < 1 || (dp.IdMedicamentoLote < 1 & dp.IdProducto < 1) || (dp.IdMedicamentoLote > 1 & dp.IdProducto > 1) || dp.IdProveedor < 1)
+            {
+                aux = false;
+                return aux;
+            }
+            return aux;
+        }
     }
 }

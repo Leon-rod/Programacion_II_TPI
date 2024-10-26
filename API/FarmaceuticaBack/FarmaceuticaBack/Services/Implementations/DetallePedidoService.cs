@@ -30,7 +30,7 @@ namespace FarmaceuticaBack.Services.Implementations
 
         public async Task<List<DetallesPedido>> GetByPedido(int id)
         {
-            return await GetByPedido(id);
+            return await _repository.GetByPedido(id);
         }
 
         public async Task<bool> Save(DetallesPedido dp)
