@@ -1,40 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\",
+  "WorkspaceRootPath": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\farmaceuticaback\\data\\repositories\\inventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\repositories\\inventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\repositories\\medicamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\repositories\\medicamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\farmaceuticaback\\data\\contracts\\iinventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\contracts\\iinventariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\farmaceuticaback\\services\\contracts\\iinventarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\services\\contracts\\iinventarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\farmaceuticawebapi\\controllers\\inventariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\farmaceuticaback\\data\\models\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\inventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\franc\\onedrive\\escritorio\\apuntes utn\\programaci\u00F3n ii\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\franc\\onedrive\\escritorio\\apuntes utn\\programaci\u00F3n ii\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\dispensacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\dispensacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\franc\\onedrive\\escritorio\\apuntes utn\\programaci\u00F3n ii\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\repositories\\stockrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\repositories\\stockrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\farmaceuticawebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticawebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,127 +25,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Factura.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Factura.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Factura.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Factura.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Factura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T20:25:37.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Dispensacion.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Dispensacion.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Dispensacion.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Dispensacion.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Dispensacion.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCAAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T20:16:02.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StockRepository.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\StockRepository.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Repositories\\StockRepository.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\StockRepository.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Repositories\\StockRepository.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA5wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T20:14:19.618Z",
-              "EditorCaption": ""
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "InventarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\InventarioRepository.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Repositories\\InventarioRepository.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\InventarioRepository.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Repositories\\InventarioRepository.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBIAAAAJAAAA",
+              "Title": "MedicamentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "RelativeToolTip": "FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwE0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:17:44.895Z",
+              "WhenOpened": "2024-10-26T02:02:19.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IInventarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Contracts\\IInventarioRepository.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Contracts\\IInventarioRepository.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Contracts\\IInventarioRepository.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Contracts\\IInventarioRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Title": "Marca.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T02:30:05.854Z",
+              "WhenOpened": "2024-10-26T01:58:28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IInventarioService.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Services\\Contracts\\IInventarioService.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Services\\Contracts\\IInventarioService.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Services\\Contracts\\IInventarioService.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Services\\Contracts\\IInventarioService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA0AAAA",
+              "Title": "Medicamento.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAmwCAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T01:47:42.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Inventario.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Inventario.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Inventario.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Inventario.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Inventario.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T16:04:46.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\Program.cs",
-              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\Program.cs",
-              "RelativeToolTip": "..\\FarmaceuticaWebApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:28:37.226Z",
+              "WhenOpened": "2024-10-26T01:56:46.88Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "InventarioController.cs",
-              "DocumentMoniker": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\Controllers\\InventarioController.cs",
-              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\Controllers\\InventarioController.cs",
-              "ToolTip": "C:\\Users\\franc\\OneDrive\\Escritorio\\Apuntes UTN\\Programaci\u00F3n II\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\Controllers\\InventarioController.cs",
-              "RelativeToolTip": "..\\FarmaceuticaWebApi\\Controllers\\InventarioController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAcwCQAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T15:25:53.588Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\appsettings.json",
+              "RelativeToolTip": "..\\FarmaceuticaWebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-26T01:50:21.587Z",
               "EditorCaption": ""
             }
           ]

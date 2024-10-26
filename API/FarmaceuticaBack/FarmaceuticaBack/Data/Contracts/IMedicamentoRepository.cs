@@ -1,4 +1,5 @@
-﻿using FarmaceuticaBack.Models;
+﻿using FarmaceuticaBack.Data.Models;
+using FarmaceuticaBack.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace FarmaceuticaBack.Data.Contracts
 {
     public interface IMedicamentoRepository
     {
-        List<Medicamento> GetAll();
+        Task<List<Medicamento>> GetAll();
+        Task<List<Medicamento>> GetByFiltro(MedicamentoFiltro oFiltro);
+        Task<bool> Save(Medicamento oMedicamento);
+        Task<bool> Delete(int? id);
+        Task<bool> Update(Medicamento oMedicamento);
     }
 }

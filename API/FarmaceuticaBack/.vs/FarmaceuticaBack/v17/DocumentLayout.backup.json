@@ -1,39 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\",
+  "WorkspaceRootPath": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\establecimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\establecimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\repositories\\medicamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\repositories\\medicamentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticawebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticawebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticawebapi\\controllers\\establecimientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticaback\\farmaceuticaback\\services\\establecimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\services\\establecimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticaback\\farmaceuticaback\\services\\contracts\\iestablecimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\services\\contracts\\iestablecimientoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticaback\\farmaceuticaback\\data\\contracts\\iestablecimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\contracts\\iestablecimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticaback\\farmaceuticaback\\data\\repositories\\establecimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\repositories\\establecimientorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|c:\\users\\leo\\desktop\\utn\\2do cuatrimestre\\tpi_programacion_ii\\api\\farmaceuticaback\\farmaceuticaback\\data\\models\\farmaceuticacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE43A0C8-D588-4BBC-BC3B-7E07031C8D10}|FarmaceuticaBack\\FarmaceuticaBack.csproj|solutionrelative:farmaceuticaback\\data\\models\\farmaceuticacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E02FA13A-345B-49CA-A5D7-729660D6BF1C}|..\\FarmaceuticaWebApi\\FarmaceuticaWebApi.csproj|c:\\users\\ramiro\\desktop\\tpi\\programacion_ii_tpi\\api\\farmaceuticawebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,127 +25,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Establecimiento.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Establecimiento.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Establecimiento.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Establecimiento.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Establecimiento.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBcAAAAQAAAAAAAAAA==",
+              "Title": "MedicamentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "RelativeToolTip": "FarmaceuticaBack\\Data\\Repositories\\MedicamentoRepository.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwE0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T16:29:43.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaWebApi\\appsettings.json",
-              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaWebApi\\appsettings.json",
-              "RelativeToolTip": "..\\FarmaceuticaWebApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-25T16:27:46.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EstablecimientoController.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaWebApi\\Controllers\\EstablecimientoController.cs",
-              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\Controllers\\EstablecimientoController.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaWebApi\\Controllers\\EstablecimientoController.cs",
-              "RelativeToolTip": "..\\FarmaceuticaWebApi\\Controllers\\EstablecimientoController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T16:24:56.738Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EstablecimientoService.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Services\\EstablecimientoService.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Services\\EstablecimientoService.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Services\\EstablecimientoService.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Services\\EstablecimientoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T16:23:33.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IEstablecimientoService.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Services\\Contracts\\IEstablecimientoService.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Services\\Contracts\\IEstablecimientoService.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Services\\Contracts\\IEstablecimientoService.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Services\\Contracts\\IEstablecimientoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T16:22:59.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EstablecimientoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\EstablecimientoRepository.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Repositories\\EstablecimientoRepository.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Repositories\\EstablecimientoRepository.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Repositories\\EstablecimientoRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T16:18:31.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IEstablecimientoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Contracts\\IEstablecimientoRepository.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Contracts\\IEstablecimientoRepository.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Contracts\\IEstablecimientoRepository.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Contracts\\IEstablecimientoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T16:17:38.52Z",
+              "WhenOpened": "2024-10-26T02:02:19.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaWebApi\\Program.cs",
-              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaWebApi\\Program.cs",
-              "RelativeToolTip": "..\\FarmaceuticaWebApi\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAABOAAAAAAAAAA==",
+              "Title": "Marca.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Marca.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T18:57:43.266Z",
+              "WhenOpened": "2024-10-26T01:58:28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FarmaceuticaContext.cs",
-              "DocumentMoniker": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\FarmaceuticaContext.cs",
-              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\FarmaceuticaContext.cs",
-              "ToolTip": "C:\\Users\\Leo\\Desktop\\UTN\\2do Cuatrimestre\\TPI_Programacion_II\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\FarmaceuticaContext.cs",
-              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\FarmaceuticaContext.cs",
-              "ViewState": "AgIAAMMDAAAAAAAAAAAIwFsDAAA9AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Medicamento.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "RelativeDocumentMoniker": "FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaBack\\FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "RelativeToolTip": "FarmaceuticaBack\\Data\\Models\\Medicamento.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAmwCAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T01:53:19.974Z",
+              "WhenOpened": "2024-10-26T01:56:46.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "..\\FarmaceuticaWebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\TPI\\Programacion_II_TPI\\API\\FarmaceuticaWebApi\\appsettings.json",
+              "RelativeToolTip": "..\\FarmaceuticaWebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-26T01:50:21.587Z",
               "EditorCaption": ""
             }
           ]

@@ -10,6 +10,68 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.InventarioController",
+    "Method": "GetAllInventarios",
+    "RelativePath": "api/Inventario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.InventarioController",
+    "Method": "GetInventarioByFactura",
+    "RelativePath": "api/Inventario/Factura",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "from",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.InventarioController",
+    "Method": "GetInventarioByPedido",
+    "RelativePath": "api/Inventario/Pedido",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "from",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
     "Method": "GetMedicamentos",
     "RelativePath": "api/Medicamento",
@@ -17,6 +79,70 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
+    "Method": "DeleteMedicamentos",
+    "RelativePath": "api/Medicamento",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
+    "Method": "SaveMedicamento",
+    "RelativePath": "api/Medicamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "oMedicamento",
+        "Type": "FarmaceuticaBack.Models.Medicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
+    "Method": "PutMedicamento",
+    "RelativePath": "api/Medicamento",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "oMedicamento",
+        "Type": "FarmaceuticaBack.Models.Medicamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FarmaceuticaWebApi.Controllers.MedicamentoController",
+    "Method": "GetByFilter",
+    "RelativePath": "api/Medicamento/api/filtro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filtro",
+        "Type": "FarmaceuticaBack.Data.Models.MedicamentoFiltro",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

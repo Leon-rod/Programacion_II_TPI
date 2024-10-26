@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaceuticaBack.Services
+namespace FarmaceuticaBack.Services.Implementations
 {
     public class InventarioService : IInventarioService
     {

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaceuticaBack.Services
+namespace FarmaceuticaBack.Services.Implementations
 {
     public class StockService : IStockService
     {
         private readonly IStockRepository _stockRepository;
         public StockService(IStockRepository stockRepository)
         {
-            this._stockRepository = stockRepository;
+            _stockRepository = stockRepository;
         }
         public Task<bool> Add(Stock stock)
         {

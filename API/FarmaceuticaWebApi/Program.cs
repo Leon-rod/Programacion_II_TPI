@@ -1,8 +1,8 @@
 using FarmaceuticaBack.Data.Contracts;
 using FarmaceuticaBack.Data.Repositories;
 using FarmaceuticaBack.Models;
-using FarmaceuticaBack.Services;
 using FarmaceuticaBack.Services.Contracts;
+using FarmaceuticaBack.Services.Implementations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +23,20 @@ builder.Services.AddScoped<IEstablecimientoService, EstablecimientoService>();
 builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
 builder.Services.AddScoped<IInventarioService, InventarioService>();
 
+builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
+builder.Services.AddScoped<IInventarioService, InventarioService>();
+
+builder.Services.AddScoped<IMonodrogaRepository, MonodrogaRepository>();
+builder.Services.AddScoped<IMonodrogaService, MonodrogaService>();
+
+builder.Services.AddScoped<ILaboratorioRepository, LaboratorioRepository>();
+builder.Services.AddScoped<ILaboratorioService, LaboratorioService>();
+
+builder.Services.AddScoped<IPresentacionRepository, PresentacionRepository>();
+builder.Services.AddScoped<IPresentacionService, PresentacionService>();
+
+builder.Services.AddScoped<IMarcaRepository, MarcaRepository>();
+builder.Services.AddScoped<IMarcaService, MarcaService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaceuticaBack.Services
+namespace FarmaceuticaBack.Services.Implementations
 {
     public class EstablecimientoService : IEstablecimientoService
     {
         private readonly IEstablecimientoRepository _repository;
         public EstablecimientoService(IEstablecimientoRepository repository)
         {
-            this._repository = repository;
+            _repository = repository;
         }
         public Task<List<Establecimiento>> GetAll()
         {
