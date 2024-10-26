@@ -39,14 +39,14 @@ namespace FarmaceuticaWebApi.Controllers
         {
             try
             {
-                if(id <= 0)
+                if (id <= 0)
                 {
                     return StatusCode(500, "Debe introducir un numero de pedido mayor a 0");
                 }
                 else
                 {
-                    var pedido = await _service.GetById(id);   
-                    if(pedido != null)
+                    var pedido = await _service.GetById(id);
+                    if (pedido != null)
                     {
                         return Ok(pedido);
                     }
@@ -60,6 +60,40 @@ namespace FarmaceuticaWebApi.Controllers
             {
                 return StatusCode(500, "Error en el servidor:" + e);
             }
+        }
+
+        [HttpGet("logistica")]
+        public async Task<IActionResult> GetByLogistica(string cuit)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(cuit))
+                {
+                    return StatusCode(500, "Debe introducir un CUIT");
+                }
+                else
+                {
+                    if (SoloNumeros(cuit))
+                    {
+                        var pedidos = await _service.GetByLogistica(cuit);
+                        return Ok(pedidos);
+                    }
+                    else
+                    {
+                        return StatusCode(500, "El CUIT solo debe llevar numeros");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private bool SoloNumeros(string cuit)
+        {
+            return long.TryParse(cuit, out _);
         }
     }
 }
