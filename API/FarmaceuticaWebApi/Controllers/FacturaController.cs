@@ -44,5 +44,45 @@ namespace FarmaceuticaWebApi.Controllers
             List<Factura> facturas = await _service.GetByEstablishment(establishment);
             return Ok(facturas);
         }
+        [HttpGet("ID")]
+        public async Task<IActionResult> GetById([FromQuery]int id)
+        {
+            Factura? factura = await _service.GetById(id);
+            if (factura == null)
+                return NotFound("No se ha encontrado una factura con ese id");
+            return Ok(factura);
+        }
+        public async Task<IActionResult> Post([FromBody]Factura factura)
+        {
+            List<Factura> facturas = await _service.GetAll();
+            Factura? f = null;
+            foreach(Factura oFactura in facturas)
+            {
+                if (oFactura.IdFactura == factura.IdFactura)
+                    f = oFactura;
+            }
+            if (f == null)
+                return NotFound();
+            string? validacion = ValidarFactura(factura);
+            if (validacion != null)
+                return BadRequest(validacion);
+            bool result = await _service.Insert(factura);
+            if (result)
+                return Ok("Se ha agregado una factura con exito");
+            return StatusCode(500,"Ha ocurrido un error al intentar insertar una factura en la base de datos");
+        }
+
+
+
+
+        private string? ValidarFactura(Factura factura)
+        {
+            string? result = null;
+            if (factura.Fecha > DateOnly.FromDateTime(DateTime.Today.Date) || factura.Fecha < DateOnly.FromDateTime(DateTime.Today.Date))
+            {
+                result = "La factura solo se puede cargar si es de hoy";
+            }
+            return result;
+        }
     }
 }

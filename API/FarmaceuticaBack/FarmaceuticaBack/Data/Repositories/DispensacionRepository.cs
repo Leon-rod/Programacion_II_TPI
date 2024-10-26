@@ -24,7 +24,8 @@ namespace FarmaceuticaBack.Data.Repositories
                 && d.IdFacturaNavigation.Fecha == DateOnly.FromDateTime(DateTime.Today.Date));
             if (dispensacion == null)
                 return false;
-            _context.Dispensaciones.Remove(dispensacion);
+            _context.Database.ExecuteSqlRaw("DELETE FROM DISPENSACIONES WHERE ID_DISPENSACION = {0} AND ID_FACTURA = {1}"
+                ,idDispensacion,idFactura);
             return await _context.SaveChangesAsync() > 0;
         }
 
@@ -38,7 +39,9 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<bool> Insert(Dispensacion dispensacion)
         {
-            await _context.Dispensaciones.AddAsync(dispensacion);
+            await _context.Database.ExecuteSqlRawAsync("INSERT INTO DISPENSACIONES(ID_FACTURA,ID_DISPENSACION,ID_MEDICAMENTO_LOTE,ID_COBERTURA,ID_PRODUCTO,DESCUENTO,PRECIO_UNITARIO,CANTIDAD,MATRICULA,CODIGO_VALIDACION) " +
+                "VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10})",dispensacion.IdFactura,dispensacion.IdDispensacion,dispensacion.IdMedicamentoLote,
+                dispensacion.IdCobertura,dispensacion.IdProducto,dispensacion.Descuento,dispensacion.PrecioUnitario,dispensacion.Cantidad,dispensacion.Matricula,dispensacion.CodigoValidacion);
             return await _context.SaveChangesAsync() > 0;
         }
     }
