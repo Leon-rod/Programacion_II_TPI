@@ -11,6 +11,6 @@ namespace FarmaceuticaBack.Services.Contracts
     {
         Task<List<Dispensacion>> GetByIdFactura(int id);
         Task<bool> Insert(Dispensacion dispensacion);
-        Task<bool> Delete(int id);
+        Task<bool> Delete(int idFactura, int IdDispensacion);
     }
 }

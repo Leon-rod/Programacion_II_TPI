@@ -16,9 +16,9 @@ namespace FarmaceuticaBack.Services.Implementations
         {
             this._repository = repository;
         }
-        public Task<bool> Delete(int id)
+        public Task<bool> Delete(int idFactura, int IdDispensacion)
         {
-            return _repository.Delete(id);
+            return _repository.Delete(idFactura, IdDispensacion);
         }
 
         public Task<List<Dispensacion>> GetByIdFactura(int id)
