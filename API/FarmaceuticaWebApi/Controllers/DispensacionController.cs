@@ -44,7 +44,7 @@ namespace FarmaceuticaWebApi.Controllers
         {
             bool result = await _service.Delete(idFactura,idDispensacion);
             if (result)
-                return Ok("Se ha eliminado con exito una dispensacion de la base de datos1");
+                return Ok("Se ha eliminado con exito una dispensacion de la base de datos!");
             return StatusCode(500, "Ha ocurrido un error al intentar eliminar una dispensacion");
         }
     }

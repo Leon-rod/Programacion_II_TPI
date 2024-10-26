@@ -18,10 +18,8 @@ namespace FarmaceuticaBack.Data.Repositories
         }
         public async Task<bool> Delete(int idFactura, int idDispensacion)
         {
-            Factura? factura = await _context.Facturas.FindAsync(idFactura);
-            if (factura == null)
-                return false;
-            Dispensacion? dispensacion = await _context.Dispensaciones.FindAsync(idDispensacion);
+            Dispensacion? dispensacion = await _context.Dispensaciones
+                .FirstOrDefaultAsync(d => d.IdFactura == idFactura && d.IdDispensacion == idDispensacion);
             if (dispensacion == null)
                 return false;
             _context.Dispensaciones.Remove(dispensacion);
@@ -40,6 +38,11 @@ namespace FarmaceuticaBack.Data.Repositories
         {
             await _context.Dispensaciones.AddAsync(dispensacion);
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public Task<bool> Update(Dispensacion dispensacion)
+        {
+            throw new NotImplementedException();
         }
     }
 }
