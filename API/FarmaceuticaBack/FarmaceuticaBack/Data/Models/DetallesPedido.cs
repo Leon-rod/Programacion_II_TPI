@@ -23,7 +23,7 @@ public partial class DetallesPedido
     public decimal PrecioUnitario { get; set; }
 
     public virtual MedicamentosLote IdMedicamentoLoteNavigation { get; set; }
-    [JsonIgnore]
+
     public virtual Pedido IdPedidoNavigation { get; set; }
 
     public virtual Producto IdProductoNavigation { get; set; }
