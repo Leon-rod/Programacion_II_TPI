@@ -38,6 +38,12 @@ builder.Services.AddScoped<IPresentacionService, PresentacionService>();
 builder.Services.AddScoped<IMarcaRepository, MarcaRepository>();
 builder.Services.AddScoped<IMarcaService, MarcaService>();
 
+builder.Services.AddScoped<IDispensacionRepository, DispensacionRepository>();
+builder.Services.AddScoped<IDispensacionService, DispensacionService>();
+
+builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
+builder.Services.AddScoped<IPedidoService, PedidoService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
