@@ -19,7 +19,9 @@ namespace FarmaceuticaBack.Data.Repositories
         public async Task<bool> Delete(int idFactura, int idDispensacion)
         {
             Dispensacion? dispensacion = await _context.Dispensaciones
-                .FirstOrDefaultAsync(d => d.IdFactura == idFactura && d.IdDispensacion == idDispensacion);
+                .Include(d => d.IdFacturaNavigation)
+                .FirstOrDefaultAsync(d => d.IdFactura == idFactura && d.IdDispensacion == idDispensacion 
+                && d.IdFacturaNavigation.Fecha == DateOnly.FromDateTime(DateTime.Today.Date));
             if (dispensacion == null)
                 return false;
             _context.Dispensaciones.Remove(dispensacion);
@@ -38,11 +40,6 @@ namespace FarmaceuticaBack.Data.Repositories
         {
             await _context.Dispensaciones.AddAsync(dispensacion);
             return await _context.SaveChangesAsync() > 0;
-        }
-
-        public Task<bool> Update(Dispensacion dispensacion)
-        {
-            throw new NotImplementedException();
         }
     }
 }
