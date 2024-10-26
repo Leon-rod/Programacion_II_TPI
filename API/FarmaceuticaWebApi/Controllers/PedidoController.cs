@@ -218,7 +218,7 @@ namespace FarmaceuticaWebApi.Controllers
 
             DateOnly fechaDesde = DateOnly.FromDateTime(DateTime.Now.AddDays(-1));
             DateOnly fechaHasta = DateOnly.FromDateTime(DateTime.Now.AddDays(1));
-            if (pedido.Fecha > fechaHasta || pedido.Fecha < fechaDesde)
+            if (pedido.Fecha >= fechaHasta || pedido.Fecha <= fechaDesde)
             {
                 aux = false;
                 return aux;
