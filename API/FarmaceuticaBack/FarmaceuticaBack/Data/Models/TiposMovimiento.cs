@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FarmaceuticaBack.Models;
 
@@ -13,5 +14,6 @@ public partial class TiposMovimiento
 
     public int Modificador { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Inventario> Inventarios { get; set; } = new List<Inventario>();
 }

@@ -1,4 +1,5 @@
 ﻿using FarmaceuticaBack.Data.Contracts;
+using FarmaceuticaBack.Data.Models;
 using FarmaceuticaBack.Models;
 using FarmaceuticaBack.Services.Contracts;
 using System;
@@ -34,15 +35,16 @@ namespace FarmaceuticaBack.Services.Implementations
             return await _repository.GetInventarioByFactura(idFactura, from, to);
         }
 
+        public async Task<List<Inventario>> GetInventarioByFilter(InventarioFiltro oFiltro)
+        {
+            return await _repository.GetInventarioByFilter(oFiltro);
+        }
+
         public async Task<List<Inventario>> GetInventarioByPedido(int idPedido, DateTime from, DateTime to)
         {
             return await _repository.GetInventarioByPedido(idPedido, from, to);
         }
 
-        public async Task<List<Inventario>> GetInventarioByTipoMov(int mov, DateTime from, DateTime to)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<bool> UpdateInventario(Inventario inv)
         {

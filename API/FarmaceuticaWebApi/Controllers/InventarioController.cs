@@ -1,4 +1,5 @@
-﻿using FarmaceuticaBack.Models;
+﻿using FarmaceuticaBack.Data.Models;
+using FarmaceuticaBack.Models;
 using FarmaceuticaBack.Services.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -50,6 +51,31 @@ namespace FarmaceuticaWebApi.Controllers
             }
 
         }
+
+        [HttpPost("Filters")]
+
+        public async Task<IActionResult> GetInventarioByFilter(InventarioFiltro oFiltro)
+        {
+            if ((oFiltro.IdFactura == 0 || oFiltro.GetType().GetProperty("IdFactura")?.PropertyType != typeof(int)) && oFiltro.IdFactura != null)
+            {
+                return BadRequest("El id factura no puede ser 0 y debe ser un entero");
+            }
+
+            if ((oFiltro.IdPedido == 0 || oFiltro.GetType().GetProperty("IdPedido")?.PropertyType != typeof(int)) && oFiltro.IdFactura != null)
+            {
+                return BadRequest("El id pedido no puede ser 0 y debe ser un entero");
+            }
+
+            if ((oFiltro.IdTipoMov == 0 || oFiltro.GetType().GetProperty("IdTipoMov")?.PropertyType != typeof(int)) && oFiltro.IdFactura != null)
+            {
+                return BadRequest("El id tipo movimiento no puede ser 0 y debe ser un entero");
+            }
+
+            return Ok(await _inventarioService.GetInventarioByFilter(oFiltro));
+        }
+
+
+
 
         [HttpGet("Pedido")]
 

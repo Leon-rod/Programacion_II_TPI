@@ -1,9 +1,11 @@
 ﻿using FarmaceuticaBack.Data.Contracts;
+using FarmaceuticaBack.Data.Models;
 using FarmaceuticaBack.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +36,7 @@ namespace FarmaceuticaBack.Data.Repositories
                 return await _context.Inventarios
                                      .Include(d => d.Dispensacione)
                                      .Include(f => f.Dispensacione.IdFacturaNavigation)
+                                     .Include(tp => tp.IdTipoMovNavigation)
                                      .Where(i => i.IdFactura == idFactura)
                     .ToListAsync();
             }
@@ -45,12 +48,59 @@ namespace FarmaceuticaBack.Data.Repositories
                 return await _context.Inventarios
                                      .Include(d => d.Dispensacione)
                                      .Include(f => f.Dispensacione.IdFacturaNavigation)
+                                     .Include(tp => tp.IdTipoMovNavigation)
                                      .Where(i => i.IdFactura == idFactura
                                                  ||( i.Dispensacione.IdFacturaNavigation.Fecha >= fromDateOnly
                                                  && i.Dispensacione.IdFacturaNavigation.Fecha <= toDateOnly))
                                      .ToListAsync();
             }
                                 
+        }
+
+        public async Task<List<Inventario>> GetInventarioByFilter(InventarioFiltro oFiltro)
+        {
+            IQueryable<Inventario> query = _context.Inventarios.AsQueryable();
+            Type t = oFiltro.GetType();
+            PropertyInfo[] properties = t.GetProperties();
+
+            foreach (PropertyInfo p in properties)
+            {
+                if (p.Name == "FechaDesde" || p.Name == "FechaHasta")
+                {
+                    var valor = p.GetValue(oFiltro);
+                    if (valor is DateTime dateTimeValue && dateTimeValue != DateTime.MinValue)
+                    {
+                        var valorDateOnly = DateOnly.FromDateTime(dateTimeValue);
+                        if(p.Name == "FechaDesde")
+                        {
+                            query = query.Include(d => d.Dispensacione)
+                                         .Include(f => f.Dispensacione.IdFacturaNavigation)
+                                         .Include(tp => tp.IdTipoMovNavigation)
+                                         .Where(m => m.Dispensacione.IdFacturaNavigation.Fecha >= valorDateOnly);
+                        }
+                        else
+                        {
+                            query = query.Include(d => d.Dispensacione)
+                                         .Include(f => f.Dispensacione.IdFacturaNavigation)
+                                         .Include(tp => tp.IdTipoMovNavigation)
+                                         .Where(m => m.Dispensacione.IdFacturaNavigation.Fecha <= valorDateOnly);
+                        }
+
+                    }
+                }
+                else if (p.PropertyType == typeof(int))
+                {
+                    var valorInt = (int?)p.GetValue(oFiltro);
+                    if (valorInt.HasValue && valorInt.Value != 0)
+                    {
+                        query = query.Include(d => d.Dispensacione)
+                                     .Include(f => f.Dispensacione.IdFacturaNavigation)
+                                     .Where(m => EF.Property<int>(m, p.Name) == valorInt.Value);
+                    }
+                }
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<List<Inventario>> GetInventarioByPedido(int idPedido, DateTime from, DateTime to)
@@ -76,10 +126,6 @@ namespace FarmaceuticaBack.Data.Repositories
             }
         }
 
-        public Task<List<Inventario>> GetInventarioByTipoMov(int mov, DateTime from, DateTime to)
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<bool> UpdateInventario(Inventario inv)
         {
