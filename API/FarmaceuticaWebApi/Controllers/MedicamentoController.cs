@@ -14,7 +14,7 @@ namespace FarmaceuticaWebApi.Controllers
         {
             _service = service;
         }
-        [HttpPost("api/filtro")]
+        [HttpPost("Filter")]
         public async Task<IActionResult> GetByFilter([FromBody] MedicamentoFiltro filtro)
         {
             return Ok(await _service.GetByFiltro(filtro));

@@ -32,7 +32,12 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<List<Medicamento>> GetAll()
         {
-            var List = await _context.Medicamentos.ToListAsync();
+            var List = await _context.Medicamentos
+                            .Include(m => m.IdLaboratorioNavigation)
+                            .Include(m=> m.IdMonodrogaNavigation)
+                            .Include(m => m.IdMarcaNavigation)
+                            .Include(m => m.IdPresentacionNavigation)
+                            .ToListAsync();
             return List;
         }
 
@@ -49,7 +54,11 @@ namespace FarmaceuticaBack.Data.Repositories
                 {
 
                     // chicos para que esto funcione el filtro tiene que tener el mismo nombre que la propiedad de la clase
-                    query = query.Where(m => EF.Property<int>(m, p.Name) == valor);
+                    query = query.Include(m => m.IdLaboratorioNavigation)
+                            .Include(m => m.IdMonodrogaNavigation)
+                            .Include(m => m.IdMarcaNavigation)
+                            .Include(m => m.IdPresentacionNavigation)
+                            .Where(m => EF.Property<int>(m, p.Name) == valor);
                 }
             }
             return await query.ToListAsync();
