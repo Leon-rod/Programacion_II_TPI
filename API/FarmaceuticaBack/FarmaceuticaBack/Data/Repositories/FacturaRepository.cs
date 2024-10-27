@@ -67,6 +67,8 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<bool> Insert(Factura factura)
         {
+            int id = await _context.Facturas.MaxAsync(f => f.IdFactura) + 1;
+            factura.IdFactura = id;
             await _context.Facturas.AddAsync(factura);
             return await _context.SaveChangesAsync() > 0;
         }
