@@ -40,6 +40,14 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<bool> Insert(Dispensacion dispensacion)
         {
+            Factura? factura = await _context.Facturas.FindAsync(dispensacion.IdFactura);
+            if (factura == null)
+                return false;
+            //int id = await _context.Dispensaciones
+            //    .Where(d => d.IdFactura == dispensacion.IdFactura)
+            //    .MaxAsync(d => d.IdDispensacion) + 1;
+            //if (id == 0 || id == null) 
+                //return false;
             int filasAfectadas;
             filasAfectadas = await _context.Database.ExecuteSqlRawAsync("INSERT INTO DISPENSACIONES(ID_FACTURA,ID_DISPENSACION,ID_MEDICAMENTO_LOTE,ID_COBERTURA,ID_PRODUCTO,DESCUENTO,PRECIO_UNITARIO,CANTIDAD,MATRICULA,CODIGO_VALIDACION) " +
                 "VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9})",dispensacion.IdFactura,dispensacion.IdDispensacion,dispensacion.IdMedicamentoLote,

@@ -104,7 +104,7 @@ namespace FarmaceuticaWebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Factura factura)
+        public async Task<IActionResult> Post([FromBody]Factura? factura)
         {
             try
             {
