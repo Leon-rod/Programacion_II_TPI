@@ -18,7 +18,7 @@ namespace FarmaceuticaBack.Data.Repositories
         }
         public async Task<bool> Delete(int idPedido, int idDetalleP)
         {
-            var filasAfectadas = await _context.Database.ExecuteSqlRawAsync("DELETE FROM DetallesPedidos WHERE IdPedido = {0} AND IdDetallePedido = {1}", idPedido, idDetalleP);
+            var filasAfectadas = await _context.Database.ExecuteSqlRawAsync("DELETE FROM DETALLES_PEDIDOS WHERE ID_PEDIDO = {0} AND ID_DETALLE_PEDIDO = {1}", idPedido, idDetalleP);
 
             return filasAfectadas > 0;
         }
@@ -48,12 +48,12 @@ namespace FarmaceuticaBack.Data.Repositories
             if (dp.IdMedicamentoLote > 0)
             {
                 filasAfectadas = await _context.Database.ExecuteSqlRawAsync("INSERT INTO DETALLES_PEDIDOS(ID_DETALLE_PEDIDO, ID_PEDIDO, ID_MEDICAMENTO_LOTE, ID_PROVEEDOR, CANTIDAD, PRECIO_UNITARIO)" +
-                                                                            "VALUES({1},{2},{3}, {4}, {5}, {6})", dp.IdDetallePedido, dp.IdPedido, dp.IdMedicamentoLote, dp.IdProveedor, dp.Cantidad, dp.PrecioUnitario);
+                                                                            "VALUES({0},{1},{2}, {3}, {4}, {5})", dp.IdDetallePedido, dp.IdPedido, dp.IdMedicamentoLote, dp.IdProveedor, dp.Cantidad, dp.PrecioUnitario);
             }
             if (dp.IdProducto > 0)
             {
                 filasAfectadas = await _context.Database.ExecuteSqlRawAsync("INSERT INTO DETALLES_PEDIDOS(ID_DETALLE_PEDIDO, ID_PEDIDO, ID_PROVEEDOR, ID_PRODUCTO, CANTIDAD, PRECIO_UNITARIO)" +
-                                                                            "VALUES({1},{2},{3}, {4}, {5}, {6})", dp.IdDetallePedido, dp.IdPedido, dp.IdProveedor, dp.IdProducto, dp.Cantidad, dp.PrecioUnitario);
+                                                                            "VALUES({0},{1},{2}, {3}, {4}, {5})", dp.IdDetallePedido, dp.IdPedido, dp.IdProveedor, dp.IdProducto, dp.Cantidad, dp.PrecioUnitario);
             }
             return filasAfectadas > 0;
         }

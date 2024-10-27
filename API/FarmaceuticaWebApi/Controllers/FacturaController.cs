@@ -52,6 +52,8 @@ namespace FarmaceuticaWebApi.Controllers
                 return NotFound("No se ha encontrado una factura con ese id");
             return Ok(factura);
         }
+
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody]Factura factura)
         {
             List<Factura> facturas = await _service.GetAll();

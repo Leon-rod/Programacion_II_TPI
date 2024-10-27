@@ -76,7 +76,7 @@ namespace FarmaceuticaWebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromQuery]DetallesPedido dp)
+        public async Task<IActionResult> Save([FromBody]DetallesPedido dp)
         {
             try
             {
