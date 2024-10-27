@@ -157,6 +157,18 @@
       {
          "Name": "[dbo].[TIPOS_PRODUCTOS]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[V_REPORTE_MENSUAL_OBRA_SOCIAL]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[V_TOTALES_FACTURADOS_FARMACIAS]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[V_TOTALES_FACTURADOS_VENDEDORES]",
+         "ObjectType": 3
       }
    ],
    "UiHint": null,

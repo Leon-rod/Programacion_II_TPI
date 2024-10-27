@@ -85,6 +85,12 @@ public partial class FarmaceuticaContext : DbContext
 
     public virtual DbSet<TiposProducto> TiposProductos { get; set; }
 
+    public virtual DbSet<VReporteMensualObraSocial> VReporteMensualObraSocials { get; set; }
+
+    public virtual DbSet<VTotalesFacturadosFarmacia> VTotalesFacturadosFarmacias { get; set; }
+
+    public virtual DbSet<VTotalesFacturadosVendedore> VTotalesFacturadosVendedores { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Barrio>(entity =>
@@ -1029,8 +1035,71 @@ public partial class FarmaceuticaContext : DbContext
                 .HasColumnName("TIPO_PRODUCTO");
         });
 
+        modelBuilder.Entity<VReporteMensualObraSocial>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("V_REPORTE_MENSUAL_OBRA_SOCIAL");
+
+            entity.Property(e => e.ImporteAReintegrar)
+                .HasColumnType("decimal(38, 4)")
+                .HasColumnName("Importe_a_reintegrar");
+            entity.Property(e => e.ObraSocial)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("Obra_Social");
+        });
+
+        modelBuilder.Entity<VTotalesFacturadosFarmacia>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("V_TOTALES_FACTURADOS_FARMACIAS");
+
+            entity.Property(e => e.Establecimiento)
+                .IsRequired()
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.IdEstablecimiento).HasColumnName("ID_ESTABLECIMIENTO");
+            entity.Property(e => e.MejorAñoFacturado)
+                .HasMaxLength(4000)
+                .HasColumnName("Mejor_año_facturado");
+            entity.Property(e => e.TotalFacturado)
+                .HasMaxLength(4000)
+                .HasColumnName("Total_facturado");
+        });
+
+        modelBuilder.Entity<VTotalesFacturadosVendedore>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("V_TOTALES_FACTURADOS_VENDEDORES");
+
+            entity.Property(e => e.Año).HasColumnName("AÑO");
+            entity.Property(e => e.IdPersonal).HasColumnName("ID_PERSONAL");
+            entity.Property(e => e.Mes).HasColumnName("MES");
+            entity.Property(e => e.Personal)
+                .IsRequired()
+                .HasMaxLength(102)
+                .IsUnicode(false)
+                .HasColumnName("PERSONAL");
+            entity.Property(e => e.TotalFacturado)
+                .HasColumnType("decimal(38, 2)")
+                .HasColumnName("TOTAL_FACTURADO");
+            entity.Property(e => e.VentaMasCara)
+                .HasColumnType("decimal(21, 2)")
+                .HasColumnName("VENTA_MAS_CARA");
+        });
+
+
+
+
         OnModelCreatingPartial(modelBuilder);
+
+
     }
+
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
