@@ -48,21 +48,47 @@ namespace FarmaceuticaBack.Data.Repositories
             PropertyInfo[] properties = t.GetProperties();
             foreach (PropertyInfo p in properties)
             {
-                int? valor = (int)p.GetValue(oFiltro);
-
-                if (valor != null && valor != 0)
+                if (p.PropertyType == typeof(string))
                 {
-
-                    // chicos para que esto funcione el filtro tiene que tener el mismo nombre que la propiedad de la clase
-                    query = query.Include(m => m.IdLaboratorioNavigation)
-                            .Include(m => m.IdMonodrogaNavigation)
-                            .Include(m => m.IdMarcaNavigation)
-                            .Include(m => m.IdPresentacionNavigation)
-                            .Where(m => EF.Property<int>(m, p.Name) == valor);
+                    string nombre = (string)p.GetValue(oFiltro);
+                    if(nombre != "Seleccionar" && nombre != null && nombre != "string")
+                    {
+                        query = query.Include(m => m.IdLaboratorioNavigation)
+                             .Include(m => m.IdMonodrogaNavigation)
+                                .Include(m => m.IdMarcaNavigation)
+                                .Include(m => m.IdPresentacionNavigation)
+                                .Where(m => m.NombreComercial.Contains(nombre));
+                    }
                 }
+                else
+                {
+                    int? valor = (int)p.GetValue(oFiltro);
+
+                    if (valor != null && valor != 0)
+                    {
+
+                        // chicos para que esto funcione el filtro tiene que tener el mismo nombre que la propiedad de la clase
+                        query = query.Include(m => m.IdLaboratorioNavigation)
+                                .Include(m => m.IdMonodrogaNavigation)
+                                .Include(m => m.IdMarcaNavigation)
+                                .Include(m => m.IdPresentacionNavigation)
+                                .Where(m => EF.Property<int>(m, p.Name) == valor);
+                    }
+                }
+
             }
             return await query.ToListAsync();
 
+        }
+
+        public async Task<int> GetLastId()
+        {
+            var lastId = await _context.Medicamentos
+                .OrderByDescending(m => m.IdMedicamento)
+                .Select(m => m.IdMedicamento)            
+                .FirstOrDefaultAsync();       
+
+                 return lastId;
         }
 
         public async Task<bool> Save(Medicamento oMedicamento)

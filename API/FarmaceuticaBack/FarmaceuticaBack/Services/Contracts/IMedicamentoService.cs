@@ -15,5 +15,6 @@ namespace FarmaceuticaBack.Services.Contracts
         Task<bool> Save(Medicamento oMedicamento);
         Task<bool> Delete(int? id);
         Task<bool> Update(Medicamento oMedicamento);
+        Task<int> GetLastId();
     }
 }

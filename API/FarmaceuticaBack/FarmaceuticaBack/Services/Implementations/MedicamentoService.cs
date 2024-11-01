@@ -32,6 +32,12 @@ namespace FarmaceuticaBack.Services.Implementations
             return await _repository.GetByFiltro(oFiltro);
         }
 
+        public async Task<int> GetLastId()
+        {
+            return await (_repository.GetLastId());
+        }
+
+
         public async Task<bool> Save(Medicamento oMedicamento)
         {
             return await _repository.Save(oMedicamento);
