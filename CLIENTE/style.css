@@ -1,134 +1,38 @@
-.navbar-container{
+html,body{
+    height: 100%;
+}
+
+.navbar-container {
     height: 7vh;
 }
 
-
-.main{
-    
-    height: 83vh;
+.main {
+    height: calc(100vh - 7vh - 4vh); /* Altura total menos la altura del navbar y footer */
+    display: flex;
+    flex-direction: column;
 }
 
-
-.title-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-    padding-right: 1rem;
-}
-
-.container-filter{
-    
-    display: flex;
+.title-container,
+.selects-container,
+.table-container-f {
     width: 90%;
     margin: auto;
 }
 
-footer{
+.table-wrapper {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.table-container-f {
+    height: 100%;
+    overflow-y: auto; /* Scroll solo en el eje Y */
+    width: 90%;
+    margin: auto;
+    max-height: 60vh; /* Ajusta para limitar la altura de la tabla */
+}
+
+footer {
     height: 4vh;
 }
 
-.selects-container{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-
-
-}
-
-.selects{
-    display: flex;
-    flex-direction: column;
-
-    text-align: start;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-}
-.search-container button{
-
-
-}
-
-.table-wrapper{
-    height: 80%;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-
-
-.table-container-f{
-
-    width: 90%;
-    margin: auto;
-
-    
-}
-
-
-
-.med-delete-button:hover{
-    cursor:pointer
-}
-
-.med-edit-button:hover{
-    cursor:pointer
-}
-
-
-
-
-
-
-a{
-    color: inherit; 
-    text-decoration: none;
-}
-
-.addMed:hover{
-    background-color: rgb(7, 177, 7);
-}
-
-.medAddForn-container{
-    width: 70%;
-    margin: auto;
-    height: 100%;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 2rem;
-}
-
-.radio-button-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.button-confirmAdd-container{
-    width: 70%;
-    margin: auto;
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.button-confirmAdd-container button{
-    width: 50%;
-
-}
-
-.search-btn{
-    background-color: lightblue ;
-}
-
-.search-btn:hover{
-    background-color: rgb(199, 226, 235);
-    border: 1px black solid;
-}
