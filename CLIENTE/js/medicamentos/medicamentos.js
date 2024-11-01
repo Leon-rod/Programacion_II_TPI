@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+
     // Endpoint de medicamentos
     const medicamentoUrl = "https://localhost:44379/api/Medicamento";
     
@@ -220,6 +222,10 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error al obtener los datos filtrados:", error));
     });
+
+    document.getElementById("addMedBtn").addEventListener("click", function() {
+        window.location.href = "./addMedicamentoForm.html";
+    })
 
     // Cargar medicamentos cuando se carga la página
     loadMedicamentos();

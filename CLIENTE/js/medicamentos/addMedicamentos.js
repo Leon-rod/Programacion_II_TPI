@@ -127,7 +127,8 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
     })
     .then(response => {
         if (response.ok) {
-            console.log("Medicamento agregado con éxito");
+            console.log("Medicamento agregado con éxito");    
+            localStorage.setItem('status', 200);
             window.location.href = "/pages/medicamentos.html"
 
         } else {
@@ -136,3 +137,9 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
     })
     .catch(error => console.error("Error en la solicitud:", error));
 });
+
+window.addEventListener('beforeunload', () => {
+    if (!localStorage.getItem('status')) {
+        localStorage.setItem('status', 404);
+    }
+})
