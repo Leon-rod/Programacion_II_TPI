@@ -16,9 +16,9 @@ namespace FarmaceuticaBack.Services.Implementations
         {
             _repository = repository;
         }
-        public Task<List<Establecimiento>> GetAll()
+        public async Task<List<Establecimiento>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
     }
 }

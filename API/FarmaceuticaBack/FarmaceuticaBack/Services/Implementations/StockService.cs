@@ -16,24 +16,24 @@ namespace FarmaceuticaBack.Services.Implementations
         {
             _stockRepository = stockRepository;
         }
-        public Task<bool> Add(Stock stock)
+        public async Task<bool> Add(Stock stock)
         {
-            return _stockRepository.Add(stock);
+            return await _stockRepository.Add(stock);
         }
 
-        public Task<List<Stock>> GetByEstablishment(int id)
+        public async Task<List<Stock>> GetByEstablishment(int id)
         {
-            return _stockRepository.GetByEstablishment(id);
+            return await _stockRepository.GetByEstablishment(id);
         }
 
-        public Task<List<Stock>> GetByEstablishmentAndArticle(int id, string? product, string? medicine)
+        public async Task<List<Stock>> GetByEstablishmentAndArticle(int id, string? product, string? medicine)
         {
-            return _stockRepository.GetByEstablishmentAndArticle(id, product, medicine);
+            return await _stockRepository.GetByEstablishmentAndArticle(id, product, medicine);
         }
 
-        public Task<bool> Update(Stock stock)
+        public async Task<bool> Update(Stock stock)
         {
-            return _stockRepository.Update(stock);
+            return await _stockRepository.Update(stock);
         }
     }
 }

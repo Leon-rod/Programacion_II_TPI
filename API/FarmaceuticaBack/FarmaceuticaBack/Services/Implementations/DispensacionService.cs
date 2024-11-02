@@ -16,19 +16,19 @@ namespace FarmaceuticaBack.Services.Implementations
         {
             this._repository = repository;
         }
-        public Task<bool> Delete(int idFactura, int IdDispensacion)
+        public async Task<bool> Delete(int idFactura, int IdDispensacion)
         {
-            return _repository.Delete(idFactura, IdDispensacion);
+            return await _repository.Delete(idFactura, IdDispensacion);
         }
 
-        public Task<List<Dispensacion>> GetByIdFactura(int id)
+        public async Task<List<Dispensacion>> GetByIdFactura(int id)
         {
-            return _repository.GetByIdFactura(id);
+            return await _repository.GetByIdFactura(id);
         }
 
-        public Task<bool> Insert(Dispensacion dispensacion)
+        public async Task<bool> Insert(Dispensacion dispensacion)
         {
-            return _repository.Insert(dispensacion);
+            return await _repository.Insert(dispensacion);
         }
     }
 }

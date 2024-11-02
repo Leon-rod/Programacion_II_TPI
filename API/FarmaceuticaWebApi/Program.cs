@@ -56,6 +56,9 @@ builder.Services.AddScoped<ITotalesFacturadosVendedoresService, TotalesFacturado
 builder.Services.AddScoped<IReporteMensualObraSocialRepository, ReporteMensualObraSocialRepository>();
 builder.Services.AddScoped<IReporteMensualObraSocialService, ReporteMensualObraSocialService>();
 
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
