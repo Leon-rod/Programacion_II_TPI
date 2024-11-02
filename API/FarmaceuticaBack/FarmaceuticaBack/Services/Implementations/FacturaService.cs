@@ -16,44 +16,44 @@ namespace FarmaceuticaBack.Services.Implementations
         {
             this._repository = repository;
         }
-        public Task<List<Factura>> GetAll()
+        public async Task<List<Factura>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
-        public Task<List<Factura>> GetByClient(int client)
+        public async Task<List<Factura>> GetByClient(int client)
         {
-            return _repository.GetByClient(client);
+            return await _repository.GetByClient(client);
         }
 
-        public Task<List<Factura>> GetByDates(DateOnly startDate, DateOnly endDate)
+        public async Task<List<Factura>> GetByDates(DateOnly startDate, DateOnly endDate)
         {
-            return _repository.GetByDates(startDate, endDate);
+            return await _repository.GetByDates(startDate, endDate);
         }
 
-        public Task<List<Factura>> GetByEmployee(int employee)
+        public async Task<List<Factura>> GetByEmployee(int employee)
         {
-            return _repository.GetByEmployee(employee);
+            return await _repository.GetByEmployee(employee);
         }
 
-        public Task<List<Factura>> GetByEstablishment(int establishment)
+        public async Task<List<Factura>> GetByEstablishment(int establishment)
         {
-            return _repository.GetByEstablishment(establishment);
+            return await _repository.GetByEstablishment(establishment);
         }
 
-        public Task<Factura> GetById(int id)
+        public async Task<Factura> GetById(int id)
         {
-            return _repository.GetById(id);
+            return await _repository.GetById(id);
         }
 
-        public Task<bool> Insert(Factura factura)
+        public async Task<bool> Insert(Factura factura)
         {
-            return _repository.Insert(factura);
+            return await _repository.Insert(factura);
         }
 
-        public Task<bool> Update(Factura factura)
+        public async Task<bool> Update(Factura factura)
         {
-            return _repository.Update(factura);
+            return await _repository.Update(factura);
         }
     }
 }
