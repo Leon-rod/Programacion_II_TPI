@@ -18,6 +18,13 @@ namespace FarmaceuticaWebApi.Controllers
             _service = service;
         }
 
+        [HttpGet("LastId")]
+
+        public async Task<IActionResult> GetLastId()
+        {
+            return Ok(await _service.GetLastId());
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAllPedidos()
         {
