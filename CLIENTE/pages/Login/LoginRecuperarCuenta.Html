@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="ruta/a/tu/logo.png" type="image/png"> <!-- Cambia la ruta del logo -->
+    <link rel="stylesheet" href="../CSS/styleRecuperar.css">
+    <title>Registrar Cuenta</title>
+</head>
+<body>
+
+<div class="register-container">
+    <h2 class="text-center">
+        <img src="../IMG/logoHead.jfif" alt="Logo" style="width: 100px; height: auto;">
+    </h2>
+    <h2 class="text-center">Recuperar Cuenta</h2>
+    <h6 class="text-center">Proporciona esta información para ayudarnos a encontrar tu cuenta (todos los campos son obligatorios):</h6>
+    <form action="LoginConfirmar.html" method="get" >
+        <div class="form-group">
+            <label for="street">Ingrese la validacion:</label>
+            <input type="text" class="form-control" id="street" placeholder="Ingrese la validacion" required>
+        </div>
+        <div class="form-group">
+            <label for="document-type">Tipo de Documento</label>
+            <select class="form-control" id="document-type" required>
+                <option value="" disabled selected>Seleccione la validacion por la que desea recuperar</option>
+                <option value="E-mail">E-mail</option>
+                <option value="Telefono">Telefono</option>
+                <option value="Tipo Documento">Dni,Cedula,etc</option>
+            </select>
+        </div>
+        <div class="text-center">
+         <button type="submit" class="btn btn-success custom-button">Recuperar</button>
+        </div>
+        <div class="text-center">
+        <a href="../HTML/Registrar.Html" class="btn volver btn-link btn-lg">Volver</a>
+    </div>
+    </form>
+
+</div>
+<footer class="py-3 my-4">
+    <div class="container">
+        <p class="text-center text-muted mb-0">© 2024 UTN, INC</p>
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

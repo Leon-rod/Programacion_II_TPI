@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styleRegistro.css">
+    <link rel="icon" href="../IMG/logoHead.jfif" type="image/png"> <!-- Cambia la ruta del logo -->
+    <title>Registrar Cuenta</title>
+    
+</head>
+<body>
+
+<div class="register-container">
+    <h2 class="text-center">
+        <img src="../IMG/logoHead.jfif" alt="Logo" style="width: 100px; height: auto;">
+    </h2>
+    <h2 class="text-center">Registrar Cuenta</h2>
+    <form>
+        <div class="form-group">
+            <label for="id-personal">ID Personal</label>
+            <input type="text" class="form-control" id="id-personal" placeholder="Ingrese su ID Personal" required>
+        </div>
+        <div class="form-group">
+            <label for="first-name">Nombre</label>
+            <input type="text" class="form-control" id="first-name" placeholder="Ingrese su nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="last-name">Apellido</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Ingrese su apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="birth-date">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="birth-date" required>
+        </div>
+        <div class="form-group">
+            <label for="street">Calle</label>
+            <input type="text" class="form-control" id="street" placeholder="Ingrese la calle" required>
+        </div>
+        <div class="form-group">
+            <label for="height">Altura</label>
+            <input type="number" class="form-control" id="height" placeholder="Ingrese la altura" required>
+        </div>
+        <div class="form-group">
+            <label for="neighborhood">Barrio</label>
+            <select class="form-control" id="neighborhood" required>
+                <option value="" disabled selected>Seleccione su barrio</option>
+                <option value="barrio1">Barrio 1</option>
+                <option value="barrio2">Barrio 2</option>
+                <option value="barrio3">Barrio 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" placeholder="Ingrese su DNI" required>
+        </div>
+        <div class="form-group">
+            <label for="document-type">Tipo de Documento</label>
+            <select class="form-control" id="document-type" required>
+                <option value="" disabled selected>Seleccione el tipo de documento</option>
+                <option value="dni">DNI</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="cedula">Cédula</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Género</label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="gender-male" value="hombre" required>
+                <label class="form-check-label" for="gender-male">Hombre</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="gender-female" value="mujer" required>
+                <label class="form-check-label" for="gender-female">Mujer</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="gender-other" value="otro" required>
+                <label class="form-check-label" for="gender-other">Otro</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="last-name">E-mail</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Ingrese su E-mail" required>
+        </div>
+        <div class="form-group">
+            <label for="last-name">Contraseña</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Ingrese su contraseña" required>
+        </div>
+        <div class="form-group">
+            <label for="last-name">Confimrar Contraseña</label>
+            <input type="text" class="form-control" id="last-name" placeholder="Confirme su contraseña" required>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+    </form>
+    <div class="text-center mt-3">
+        <a href="login.html" class="btn btn-link">¿Ya tienes cuenta? Iniciar Sesión</a>
+    </div>
+    <div class="text-center mt-3">
+        <a href="LoginRecuperarCuenta.Html" class="btn btn-link">¿Olvidaste tu contraseña? </a>
+    </div>
+</div>
+
+
+<footer class="py-3 my-4">
+    <div class="container">
+        <a href="../HTML/Login.Html" class="btn btn-primary btn-lg">Volver</a>
+        <p class="text-center text-muted">© 2024 UTN, INC</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
