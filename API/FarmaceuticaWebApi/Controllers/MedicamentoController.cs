@@ -28,6 +28,32 @@ namespace FarmaceuticaWebApi.Controllers
 
         }
 
+        [HttpGet("Id")]
+
+        public async Task<IActionResult> GetMedicamentoById([FromQuery] int id)
+        {
+            try
+            {
+                var med = await _service.GetMedicamentoById(id);
+                if (med != null)
+                {
+                    return Ok(med);
+                }
+                else
+                {
+                    return NotFound("No se encontró el medicamento.");
+                }
+
+            }
+            catch (Exception exc)
+            {
+
+                return StatusCode(500, "Error" + exc); ;
+            }
+
+        }
+
+
         [HttpGet("LastId")]
 
         public async Task<IActionResult> GetLastId()

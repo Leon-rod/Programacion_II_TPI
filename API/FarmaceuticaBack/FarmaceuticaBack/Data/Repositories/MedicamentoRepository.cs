@@ -91,6 +91,17 @@ namespace FarmaceuticaBack.Data.Repositories
                  return lastId;
         }
 
+        public async Task<Medicamento> GetMedicamentoById(int id)
+        {
+            return await _context.Medicamentos
+                                 .Include(m => m.IdLaboratorioNavigation)
+                                .Include(m => m.IdMonodrogaNavigation)
+                                .Include(m => m.IdMarcaNavigation)
+                                .Include(m => m.IdPresentacionNavigation)
+                                .Where(m => m.IdMedicamento == id)
+                                 .FirstOrDefaultAsync();
+        }
+
         public async Task<bool> Save(Medicamento oMedicamento)
         {
             _context.Medicamentos.Add(oMedicamento);

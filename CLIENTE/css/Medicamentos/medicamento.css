@@ -1,17 +1,21 @@
 .main {
     width: 90%;
     padding-top: 1rem;
+    overflow-x: hidden;
 }
 
 .table-container {
     max-height: 70vh; 
-    min-height: 70vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
+
 .med-table {
-    width: 100%;
+    width: auto; 
     border-collapse: collapse;
+
 }
 
 th, td {
@@ -23,10 +27,10 @@ th, td {
 th {
     position: sticky;
     top: 0;
-    background-color: #f8f9fa; /* Fondo para que destaque */
+    background-color: #f8f9fa; 
     z-index: 1;
 }
 
 tbody {
-    min-height: 70vh; /* Ajusta también según lo necesario */
+    min-height: 70vh; 
 }

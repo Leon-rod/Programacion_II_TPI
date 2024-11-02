@@ -2,10 +2,9 @@ const ShowResult = (message) =>{
     Toastify({
         text: `${message}`,
         duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         close: true,
-        gravity: "bottom", // `top` or `bottom`
+        gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: false, // Prevents dismissing of toast on hover
         style: {
@@ -14,4 +13,20 @@ const ShowResult = (message) =>{
         onClick: function(){} // Callback after click
     }).showToast();
 }
-export {ShowResult} 
+
+const ShowResultError = (message) =>{
+  Toastify({
+      text: `${message}`,
+      duration: 3000,
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: false, // Prevents dismissing of toast on hover
+      style: {
+        background: "red",
+      },
+      onClick: function(){} // Callback after click
+  }).showToast();
+}
+export {ShowResult, ShowResultError} 
