@@ -48,6 +48,11 @@ namespace FarmaceuticaBack.Services.Implementations
             return await _pedido.GetByLogistica(id);
         }
 
+        public async Task<int> GetLastId()
+        {
+            return await _pedido.GetLastId();
+        }
+
         public async Task<bool> Save(Pedido pedido)
         {
             return await _pedido.Save(pedido);

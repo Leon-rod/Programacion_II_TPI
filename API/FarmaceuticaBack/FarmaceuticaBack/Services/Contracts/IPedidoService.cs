@@ -16,5 +16,7 @@ namespace FarmaceuticaBack.Services.Contracts
         Task<List<Pedido>> GetByEstablecimiento(int id);
         Task<bool> Save(Pedido pedido);
         Task<bool> Edit(Pedido pedido);
+
+        Task<int> GetLastId();
     }
 }

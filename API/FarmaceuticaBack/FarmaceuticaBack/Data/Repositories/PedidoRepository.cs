@@ -83,10 +83,15 @@ namespace FarmaceuticaBack.Data.Repositories
             return pedidos;
         }
 
+        public async Task<int> GetLastId()
+        {
+            int id = await _context.Pedidos.MaxAsync(p => p.IdPedido);
+            return id;
+        }
+
         public async Task<bool> Save(Pedido pedido)
         {
-            int id = await _context.Pedidos.MaxAsync(p => p.IdPedido) + 1;
-            pedido.IdPedido = id;
+            
             
             await _context.AddAsync(pedido);
             
