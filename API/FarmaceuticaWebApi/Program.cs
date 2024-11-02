@@ -65,6 +65,9 @@ builder.Services.AddScoped<IPersonalEstablecimientoService, PersonalEstablecimie
 builder.Services.AddScoped<ILogisticaRepository, LogisticaRepository>();
 builder.Services.AddScoped<ILogisticaService, LogisticaService>();
 
+builder.Services.AddScoped<ICoberturaRepository, CoberturaRepository>();
+builder.Services.AddScoped<ICoberturaService, CoberturaService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
