@@ -1,5 +1,5 @@
 import { ShowResultError } from "./toast.js"
-import { loadMarcas, loadLaboratorios, loadPresentaciones, loadMonodrogas } from "./medicamentos.js";
+import { loadMarcas, loadLaboratorios, loadPresentaciones, loadMonodrogas } from "./auxMedicamentos.js";
 
 document.addEventListener("DOMContentLoaded", function() {
     
@@ -43,8 +43,8 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
     const precio = parseFloat(document.getElementById("precioMedAddForm").value);
 
 
-    const ventaLibre = document.querySelector('input[name="ventaLibre"]:checked').value;
-    const activo = document.querySelector('input[name="activo"]:checked').value;
+    const ventaLibre = document.querySelector('input[name="ventaLibre"]:checked').value === "true";
+    const activo = document.querySelector('input[name="activo"]:checked').value === "true";
 
 
     const medicamento = {
@@ -56,10 +56,9 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
         idPresentacion: idPresentacion,
         descripcion: descripcion,
         precio: precio,
-        ventaLibre: ventaLibre == "Sí" ? true : false,
-        activo: activo == "Sí" ? true : false
+        ventaLibre: ventaLibre,  
+        activo: activo           
     };
-
 
     fetch("https://localhost:44379/api/Medicamento", {
         method: "POST",
@@ -73,7 +72,7 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
 
             console.log("Medicamento agregado con éxito");    
             localStorage.setItem('status', 200);
-            window.location.href = "/pages/medicamentos.html"
+            window.location.href = "./medicamentos.html"
 
         } else {
             console.log("Error al agregar el medicamento")

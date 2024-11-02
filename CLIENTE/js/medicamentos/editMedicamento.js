@@ -1,9 +1,10 @@
-import { loadLaboratorios, loadMarcas, loadPresentaciones, loadMonodrogas } from "./medicamentos.js";
+import { loadLaboratorios, loadMarcas, loadPresentaciones, loadMonodrogas } from "./auxMedicamentos.js";
+import { ShowResult, ShowResultError } from "./toast.js";
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     const id = localStorage.getItem("medicamentoId");
 
-    // Referencias a los elementos del formulario
+
     const idMedicamento = document.getElementById("idMedEditForm");
     const nombreComercial = document.getElementById("nameMedEditForm");
     const idMonodroga = document.getElementById("monodrogas");
@@ -17,14 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const activoSi = document.querySelector('input[name="activo"][value="true"]');
     const activoNo = document.querySelector('input[name="activo"][value="false"]');
 
-    // Verifica si hay un ID en localStorage
+
     if (!id) {
         console.error("No se encontró el ID del medicamento en localStorage.");
         return;
     }
 
-    // Obtener los datos del medicamento por su ID
-    fetch(`https://localhost:44379/api/Medicamento/${id}`, {
+    await fetch(`https://localhost:44379/api/Medicamento/Id?id=${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -32,31 +32,92 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(response => response.json())
     .then(data => {
-        // Asigna los valores obtenidos a los campos del formulario
+        console.log(data)
+
         idMedicamento.value = data.idMedicamento;
         nombreComercial.value = data.nombreComercial;
-        idMonodroga.value = data.idMonodroga;
-        loadMonodrogas(idMonodroga)
-        //idMonodroga.textContent = data.idMonodrogaNavigation.idMonodroga
+        
+        loadMonodrogas(idMonodroga, data.idMonodroga)
+
         idLaboratorio.value = data.idLaboratorio;
+        loadLaboratorios(idLaboratorio, data.idLaboratorio)
+
         idMarca.value = data.idMarca;
+        loadMarcas(idMarca, data.idMarca)
+
         idPresentacion.value = data.idPresentacion;
+        loadPresentaciones(idPresentacion, data.idPresentacion)
+
         descripcion.value = data.descripcion;
         precio.value = data.precio;
 
-        // Marcar el radio button correspondiente para ventaLibre
+
         if (data.ventaLibre) {
-            ventaLibreYes.checked = true;
+            ventaLibreSi.checked = true;
         } else {
             ventaLibreNo.checked = true;
         }
 
-        // Marcar el radio button correspondiente para activo
+
         if (data.activo) {
-            activoYes.checked = true;
+            activoSi.checked = true;
         } else {
             activoNo.checked = true;
         }
     })
     .catch(error => console.error("Error al obtener el medicamento:", error));
 });
+
+document.getElementById("btn-editMed").addEventListener("click", function() {
+
+    const idMedicamento = document.getElementById("idMedEditForm").value;
+    const nombreComercial = document.getElementById("nameMedEditForm").value;
+    const idMonodroga = document.getElementById("monodrogas").value;
+    const idLaboratorio = document.getElementById("laboratorios").value;
+    const idMarca = document.getElementById("marcas").value;
+    const idPresentacion = document.getElementById("presentaciones").value;
+    const descripcion = document.getElementById("descripcionMedEditForm").value;
+    const precio = parseFloat(document.getElementById("precioMedEditForm").value);
+
+
+
+    const ventaLibre = document.querySelector('input[name="ventaLibre"]:checked').value === "true";
+    const activo = document.querySelector('input[name="activo"]:checked').value === "true";
+
+
+    const medicamento = {
+        idMedicamento: idMedicamento,
+        nombreComercial: nombreComercial,
+        idMonodroga: idMonodroga,
+        idLaboratorio: idLaboratorio,
+        idMarca: idMarca,
+        idPresentacion: idPresentacion,
+        descripcion: descripcion,
+        precio: precio,
+        ventaLibre: ventaLibre,  
+        activo: activo           
+    };
+
+    fetch("https://localhost:44379/api/Medicamento", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(medicamento)
+    })
+    .then(response => {
+        if (response.ok) {
+
+            console.log("Medicamento editado con éxito");    
+            localStorage.setItem('status', 200);
+            window.location.href = "medicamentos.html"
+
+        } else {
+            console.log("Error al editar el medicamento")
+            ShowResultError("Debe ingresar todos los campos.");
+        }
+    })
+    .catch(error => 
+    ShowResultError("Debe ingresar todos los campos."));
+});
+

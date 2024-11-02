@@ -1,4 +1,5 @@
 import {ShowResult, ShowResultError} from './toast.js';
+import { loadLaboratorios, loadMarcas, loadMonodrogas, loadPresentaciones } from './auxMedicamentos.js';
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -228,65 +229,4 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.removeItem('status');
   }
 });
-
-export function loadMarcas(select) {
-    fetch("https://localhost:44379/api/Marca")
-        .then(response => response.json())
-        .then(data => {
-            select.innerHTML = '<option selected>Seleccionar</option>';
-            data.forEach(item => {
-                const option = document.createElement("option");
-                option.value = item.idMarca; 
-                option.textContent = item.nombreMarca; 
-                select.appendChild(option);
-            });
-
-        })
-        .catch(error => console.error("Error al cargar opciones:", error));
-}
-
-export function loadLaboratorios(select) {
-    fetch("https://localhost:44379/api/Laboratorio")
-        .then(response => response.json())
-        .then(data => {
-            select.innerHTML = '<option selected>Seleccionar</option>';
-            data.forEach(item => {
-                const option = document.createElement("option");
-                option.value = item.idLaboratorio; 
-                option.textContent = item.nombreLaboratorio; 
-                select.appendChild(option);
-            });
-        })
-        .catch(error => console.error("Error al cargar opciones:", error));
-}
-
-export function loadMonodrogas(select) {
-    fetch("https://localhost:44379/api/Monodroga")
-        .then(response => response.json())
-        .then(data => {
-            select.innerHTML = '<option selected>Seleccionar</option>';
-            data.forEach(item => {
-                const option = document.createElement("option");
-                option.value = item.idMonodroga; 
-                option.textContent = item.monodroga1; 
-                select.appendChild(option);
-            });
-        })
-        .catch(error => console.error("Error al cargar opciones:", error));
-}
-
-export function loadPresentaciones(select) {
-    fetch("https://localhost:44379/api/Presentacion")
-        .then(response => response.json())
-        .then(data => {
-            select.innerHTML = '<option selected>Seleccionar</option>';
-            data.forEach(item => {
-                const option = document.createElement("option");
-                option.value = item.idPresentacion; 
-                option.textContent = item.nombrePresentacion; 
-                select.appendChild(option);
-            });
-        })
-        .catch(error => console.error("Error al cargar opciones:", error));
-}
 

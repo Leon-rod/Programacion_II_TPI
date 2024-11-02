@@ -74,7 +74,7 @@
             <article class="medAddForm-container border rounded-2 p-3">
                 <div class="mb-3">
                     <label for="" class="form-label">Id Medicamento</label>
-                    <input type="number" class="form-control" id="idMedAddForm" disabled placeholder="">
+                    <input type="number" class="form-control" id="idMedEditForm" disabled placeholder="">
                 </div>
     
                 <div class="mb-3">
@@ -103,18 +103,18 @@
                 </div>
                 
                 <div class="mb-3 d-flex gap-2">
-                  <label class="form-check-label" for="">Venta libre</label>
+                  <label class="form-check-label">Venta libre</label>
                   <div class="radio-button-container d-flex">
                       <div class="form-check me-2">
-                          <input class="form-check-input" type="radio" name="ventaLibre" id="flexRadioDefault1">
-                          <label class="form-check-label" for="ventaLibre">Sí</label>
+                          <input class="form-check-input" type="radio" name="ventaLibre" id="ventaLibreSi" value="true">
+                          <label class="form-check-label" for="ventaLibreSi">Sí</label>
                       </div>
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="ventaLibre" id="flexRadioDefault2" checked>
-                          <label class="form-check-label" for="ventaLibre">No</label>
+                          <input class="form-check-input" type="radio" name="ventaLibre" id="ventaLibreNo" value="false" checked>
+                          <label class="form-check-label" for="ventaLibreNo">No</label>
                       </div>
                   </div>
-                </div>
+              </div>
 
     
                 <div class="mb-3">
@@ -128,23 +128,23 @@
                 </div>
                 
                 <div class="mb-3 d-flex gap-2">
-                  <label class="form-check-label" for="">Activo</label>
+                  <label class="form-check-label">Activo</label>
                   <div class="radio-button-container d-flex">
                       <div class="form-check me-2">
-                          <input class="form-check-input" type="radio" name="activo" id="" checked>
-                          <label class="form-check-label" for="activo">Sí</label>
+                          <input class="form-check-input" type="radio" name="activo" id="activoSi" value="true">
+                          <label class="form-check-label" for="activoSi">Sí</label>
                       </div>
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="activo" id="">
-                          <label class="form-check-label" for="activo">No</label>
+                          <input class="form-check-input" type="radio" name="activo" id="activoNo" value="false" checked>
+                          <label class="form-check-label" for="activoNo">No</label>
                       </div>
                   </div>
-                </div>
+              </div>
 
             </article>
     
             <article class="button-confirmAdd-container text-center mt-4">
-                <button type="button" class="btn btn-primary addMed" id="btn-addMed">
+                <button type="button" class="btn btn-primary addMed" id="btn-editMed">
                     Editar Medicamento
                 </button>
             </article>
