@@ -59,6 +59,9 @@ builder.Services.AddScoped<IReporteMensualObraSocialService, ReporteMensualObraS
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 
+builder.Services.AddScoped<IPersonalEstablecimientoRepository, PersonalEstablecimientoRepository>();
+builder.Services.AddScoped<IPersonalEstablecimientoService, PersonalEstablecimientoService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
