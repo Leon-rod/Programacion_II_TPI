@@ -71,6 +71,9 @@ builder.Services.AddScoped<ICoberturaService, CoberturaService>();
 builder.Services.AddScoped<IProveedorRepository, ProveedorRepository>();
 builder.Services.AddScoped<IProveedorService, ProveedorService>();
 
+builder.Services.AddScoped<IMedicamentoLoteRepository, MedicamentoLoteRepository>();
+builder.Services.AddScoped<IMedicamentoLoteService, MedicamentoLoteService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
