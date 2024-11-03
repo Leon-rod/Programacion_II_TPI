@@ -29,6 +29,8 @@ namespace FarmaceuticaBack.Data.Repositories
                 .Include(d => d.IdProductoNavigation)
                 .Include(d => d.IdMedicamentoLoteNavigation)
                 .Include(d => d.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                .Include(d => d.IdProveedorNavigation)
+                .Include(d => d.IdProductoNavigation)
                 .FirstOrDefaultAsync(d => d.IdPedido == idPedido && d.IdDetallePedido == idDetalleP);
         }
 
@@ -38,6 +40,8 @@ namespace FarmaceuticaBack.Data.Repositories
                 .Include(d => d.IdProductoNavigation)
                 .Include(d => d.IdMedicamentoLoteNavigation)
                 .Include(d => d.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                .Include(d => d.IdProveedorNavigation)
+                .Include(d => d.IdProductoNavigation)
                 .Where(d => d.IdPedido == id).ToListAsync();
             return dp;
         }

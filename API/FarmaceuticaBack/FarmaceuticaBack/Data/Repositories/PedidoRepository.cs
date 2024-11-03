@@ -35,6 +35,7 @@ namespace FarmaceuticaBack.Data.Repositories
             var pedidos = await _context.Pedidos
                 .Include(c => c.IdPersonalCargosEstablecimientosNavigation)
                 .Include(c => c.IdPersonalCargosEstablecimientosNavigation.IdPersonalNavigation)
+                .Include(c => c.IdPersonalCargosEstablecimientosNavigation.IdEstablecimientoNavigation)
                 .Include(c => c.IdLogisticaNavigation)
                 .ToListAsync();
             return pedidos;
