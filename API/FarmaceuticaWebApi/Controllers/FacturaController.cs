@@ -103,6 +103,20 @@ namespace FarmaceuticaWebApi.Controllers
             
         }
 
+        [HttpGet("GetLastId")]
+        public async Task<IActionResult> GetLastId()
+        {
+            try
+            {
+                int result = await _service.GetLastId();
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Factura? factura)
         {

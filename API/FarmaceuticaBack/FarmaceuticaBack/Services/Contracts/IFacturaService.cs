@@ -17,5 +17,6 @@ namespace FarmaceuticaBack.Services.Contracts
         Task<List<Factura>> GetByDates(DateOnly startDate, DateOnly endDate);
         Task<bool> Insert(Factura factura);
         Task<bool> Update(Factura factura);
+        Task<int> GetLastId();
     }
 }

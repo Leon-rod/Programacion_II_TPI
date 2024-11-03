@@ -65,6 +65,12 @@ namespace FarmaceuticaBack.Data.Repositories
             return factura;
         }
 
+        public async Task<int> GetLastId()
+        {
+            int result = await _context.Facturas.MaxAsync(f => f.IdFactura);
+            return result;
+        }
+
         public async Task<bool> Insert(Factura factura)
         {
             int id = await _context.Facturas.MaxAsync(f => f.IdFactura) + 1;

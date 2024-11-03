@@ -10,5 +10,6 @@ namespace FarmaceuticaBack.Data.Contracts
     public interface IPersonalEstablecimientoRepository
     {
         Task<List<PersonalCargosEstablecimiento>> GetAll();
+        Task<PersonalCargosEstablecimiento> GetById(int id);
     }
 }

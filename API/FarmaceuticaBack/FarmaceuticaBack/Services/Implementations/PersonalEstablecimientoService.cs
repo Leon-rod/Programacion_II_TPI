@@ -20,5 +20,10 @@ namespace FarmaceuticaBack.Services.Implementations
         {
             return await _repository.GetAll();
         }
+
+        public async Task<PersonalCargosEstablecimiento> GetById(int id)
+        {
+            return await this._repository.GetById(id);
+        }
     }
 }

@@ -28,5 +28,19 @@ namespace FarmaceuticaWebApi.Controllers
             }
             
         }
+        [HttpGet("ID")]
+        public async Task<IActionResult> GetById([FromQuery]int id)
+        {
+            try
+            {
+                PersonalCargosEstablecimiento personalEstablecimiento = await _service.GetById(id);
+                return Ok(personalEstablecimiento);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500,e.Message);
+            }
+            
+        }
     }
 }

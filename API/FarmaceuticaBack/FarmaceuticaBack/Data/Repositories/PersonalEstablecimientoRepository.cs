@@ -24,5 +24,13 @@ namespace FarmaceuticaBack.Data.Repositories
                 .ToListAsync();
             return result;
         }
+
+        public async Task<PersonalCargosEstablecimiento> GetById(int id)
+        {
+            PersonalCargosEstablecimiento person = await _context.PersonalCargosEstablecimientos
+                .Where(p => p.IdPersonalCargosEstablecimientos == id)
+                .FirstOrDefaultAsync();
+            return person;
+        }
     }
 }

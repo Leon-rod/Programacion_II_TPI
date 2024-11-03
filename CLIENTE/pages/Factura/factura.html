@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carga de Factura</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="../../js/medicamentos/factura.js"></script>
+    <script src="../../js/medicamentos/factura.js" defer></script>
 </head>
 <body>
 
@@ -16,20 +16,18 @@
     <form id="facturaForm">
         <div class="mb-3">
             <label for="facturaId" class="form-label">ID de Factura</label>
-            <input type="number" class="form-control" id="facturaId" placeholder="Ingrese el ID de la factura">
+            <input type="number" class="form-control" id="facturaId" placeholder="Ingrese el ID de la factura" readonly>
         </div>
         <div class="mb-3">
             <label for="cliente" class="form-label">Cliente</label>
             <select class="form-select" id="cliente">
-                <option selected>Seleccione un cliente</option>
+                <option selected disabled selected>Seleccione un cliente</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="empleado" class="form-label">Empleado</label>
             <select class="form-select" id="empleado">
-                <option selected>Seleccione un empleado</option>
-                <option value="1">Empleado 1</option>
-                <option value="2">Empleado 2</option>
+                <option selected disabled selected>Seleccione un empleado</option>
             </select>
         </div>
         <div class="mb-3">
@@ -44,23 +42,19 @@
     <form id="detalleForm" onsubmit="event.preventDefault(); agregarDetalle();">
         <div class="row">
             <div class="col-md-2 mb-3">
-                <input type="text" class="form-control" id="detalleIdFactura" placeholder="ID de Factura">
+                <input type="text" class="form-control" id="detalleIdFactura" placeholder="ID de Factura" readonly>
             </div>
             <div class="col-md-2 mb-3">
-                <input type="text" class="form-control" id="detalleId" placeholder="ID de Detalle">
+                <input type="text" class="form-control" id="detalleId" placeholder="ID de Detalle" readonly>
             </div>
             <div class="col-md-2 mb-3">
                 <select class="form-select" id="detalleMedicamento">
                     <option selected>Medicamento</option>
-                    <option value="1">Medicamento 1</option>
-                    <option value="2">Medicamento 2</option>
                 </select>
             </div>
             <div class="col-md-2 mb-3">
                 <select class="form-select" id="detalleCobertura">
                     <option selected>Cobertura</option>
-                    <option value="1">Cobertura 1</option>
-                    <option value="2">Cobertura 2</option>
                 </select>
             </div>
             <div class="col-md-2 mb-3">
@@ -79,7 +73,7 @@
                 <input type="text" class="form-control" id="detalleCodigo" placeholder="Código Validación" onkeydown="if(event.key === 'Enter') event.preventDefault()">
             </div>
             <div class="col-md-2 mb-3">
-                <button type="submit" class="btn btn-primary">Agregar Detalle</button>
+                <button type="submit" class="btn btn-primary" id="agregarBtn">Agregar Detalle</button>
             </div>
         </div>
     </form>
@@ -102,48 +96,9 @@
         </thead>
         <tbody></tbody>
     </table>
+    <button type="button" class="btn btn-success" onclick="realizarFactura()">Enviar Factura</button>
 </div>
 
-<script>
-    function agregarDetalle() {
-        // Obtener valores de los campos de detalle
-        const detalleIdFactura = document.getElementById('detalleIdFactura').value;
-        const detalleId = document.getElementById('detalleId').value;
-        const detalleMedicamento = document.getElementById('detalleMedicamento').value;
-        const detalleCobertura = document.getElementById('detalleCobertura').value;
-        const detalleDescuento = document.getElementById('detalleDescuento').value;
-        const detallePrecio = document.getElementById('detallePrecio').value;
-        const detalleCantidad = document.getElementById('detalleCantidad').value;
-        const detalleMatricula = document.getElementById('detalleMatricula').value;
-        const detalleCodigo = document.getElementById('detalleCodigo').value;
-
-        // Crear una nueva fila en la tabla con los datos
-        const table = document.getElementById('detallesTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
-
-        newRow.innerHTML = `
-            <td>${detalleIdFactura}</td>
-            <td>${detalleId}</td>
-            <td>${detalleMedicamento}</td>
-            <td>${detalleCobertura}</td>
-            <td>${detalleDescuento}</td>
-            <td>${detallePrecio}</td>
-            <td>${detalleCantidad}</td>
-            <td>${detalleMatricula}</td>
-            <td>${detalleCodigo}</td>
-            <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">Eliminar</button></td>
-        `;
-
-        // Limpiar los campos de detalle después de agregar la fila
-        document.getElementById('detalleForm').reset();
-    }
-
-    function eliminarFila(button) {
-        // Eliminar la fila correspondiente al botón
-        const row = button.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-    }
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
