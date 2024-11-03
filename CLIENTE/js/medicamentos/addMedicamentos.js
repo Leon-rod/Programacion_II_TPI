@@ -1,3 +1,6 @@
+import { ShowResultError } from "./toast.js"
+import { loadMarcas, loadLaboratorios, loadPresentaciones, loadMonodrogas } from "./auxMedicamentos.js";
+
 document.addEventListener("DOMContentLoaded", function() {
     
     const selects = {
@@ -17,66 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log(data)
             })
             .catch(error => console.error("Error al cargar el id", error))
-    }
-
-    function loadMarcas(select) {
-        fetch("https://localhost:44379/api/Marca")
-            .then(response => response.json())
-            .then(data => {
-                select.innerHTML = '<option selected>Seleccionar</option>';
-                data.forEach(item => {
-                    const option = document.createElement("option");
-                    option.value = item.idMarca; 
-                    option.textContent = item.nombreMarca; 
-                    select.appendChild(option);
-                });
-            })
-            .catch(error => console.error("Error al cargar opciones:", error));
-    }
-
-    function loadLaboratorios(select) {
-        fetch("https://localhost:44379/api/Laboratorio")
-            .then(response => response.json())
-            .then(data => {
-                select.innerHTML = '<option selected>Seleccionar</option>';
-                data.forEach(item => {
-                    const option = document.createElement("option");
-                    option.value = item.idLaboratorio; 
-                    option.textContent = item.nombreLaboratorio; 
-                    select.appendChild(option);
-                });
-            })
-            .catch(error => console.error("Error al cargar opciones:", error));
-    }
-
-    function loadMonodrogas(select) {
-        fetch("https://localhost:44379/api/Monodroga")
-            .then(response => response.json())
-            .then(data => {
-                select.innerHTML = '<option selected>Seleccionar</option>';
-                data.forEach(item => {
-                    const option = document.createElement("option");
-                    option.value = item.idMonodroga; 
-                    option.textContent = item.monodroga1; 
-                    select.appendChild(option);
-                });
-            })
-            .catch(error => console.error("Error al cargar opciones:", error));
-    }
-
-    function loadPresentaciones(select) {
-        fetch("https://localhost:44379/api/Presentacion")
-            .then(response => response.json())
-            .then(data => {
-                select.innerHTML = '<option selected>Seleccionar</option>';
-                data.forEach(item => {
-                    const option = document.createElement("option");
-                    option.value = item.idPresentacion; 
-                    option.textContent = item.nombrePresentacion; 
-                    select.appendChild(option);
-                });
-            })
-            .catch(error => console.error("Error al cargar opciones:", error));
     }
 
     loadMarcas(selects.marcas);
@@ -100,8 +43,8 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
     const precio = parseFloat(document.getElementById("precioMedAddForm").value);
 
 
-    const ventaLibre = document.querySelector('input[name="ventaLibre"]:checked').value;
-    const activo = document.querySelector('input[name="activo"]:checked').value;
+    const ventaLibre = document.querySelector('input[name="ventaLibre"]:checked').value === "true";
+    const activo = document.querySelector('input[name="activo"]:checked').value === "true";
 
 
     const medicamento = {
@@ -113,10 +56,9 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
         idPresentacion: idPresentacion,
         descripcion: descripcion,
         precio: precio,
-        ventaLibre: ventaLibre == "Sí" ? true : false,
-        activo: activo == "Sí" ? true : false
+        ventaLibre: ventaLibre,  
+        activo: activo           
     };
-
 
     fetch("https://localhost:44379/api/Medicamento", {
         method: "POST",
@@ -127,19 +69,17 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
     })
     .then(response => {
         if (response.ok) {
+
             console.log("Medicamento agregado con éxito");    
             localStorage.setItem('status', 200);
-            window.location.href = "/pages/medicamentos.html"
+            window.location.href = "./medicamentos.html"
 
         } else {
-            console.log("Error al agregar el medicamento");
+            console.log("Error al agregar el medicamento")
+            ShowResultError("Debe ingresar todos los campos.");
         }
     })
-    .catch(error => console.error("Error en la solicitud:", error));
+    .catch(error => 
+    ShowResultError("Debe ingresar todos los campos."));
 });
 
-window.addEventListener('beforeunload', () => {
-    if (!localStorage.getItem('status')) {
-        localStorage.setItem('status', 404);
-    }
-})
