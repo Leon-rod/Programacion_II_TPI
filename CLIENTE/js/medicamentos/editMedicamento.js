@@ -1,5 +1,5 @@
 import { loadLaboratorios, loadMarcas, loadPresentaciones, loadMonodrogas } from "./auxMedicamentos.js";
-import { ShowResult, ShowResultError } from "./toast.js";
+import { ShowResult, ShowResultError } from "../Utils/toast.js";
 
 document.addEventListener("DOMContentLoaded", async function() {
     const id = localStorage.getItem("medicamentoId");

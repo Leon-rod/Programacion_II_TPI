@@ -1,4 +1,4 @@
-import { ShowResultError } from "./toast.js"
+import { ShowResultError } from "../Utils/toast.js"
 import { loadMarcas, loadLaboratorios, loadPresentaciones, loadMonodrogas } from "./auxMedicamentos.js";
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const idMed = document.getElementById("idMedAddForm")
 
-    function loadId(){
-        fetch("https://localhost:44379/api/Medicamento/LastId")
+    async function loadId(){
+       await fetch("https://localhost:44379/api/Medicamento/LastId")
             .then(response =>response.json())
             .then(data =>{
                 idMed.value = data + 1;
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-document.getElementById("btn-addMed").addEventListener("click", function() {
+document.getElementById("btn-addMed").addEventListener("click", async function() {
 
     const idMedicamento = document.getElementById("idMedAddForm").value;
     const nombreComercial = document.getElementById("nameMedAddForm").value;
@@ -60,7 +60,7 @@ document.getElementById("btn-addMed").addEventListener("click", function() {
         activo: activo           
     };
 
-    fetch("https://localhost:44379/api/Medicamento", {
+    await fetch("https://localhost:44379/api/Medicamento", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -1,4 +1,4 @@
-import { ShowResult, ShowResultError } from './toast.js';
+import { ShowResult, ShowResultError } from '../Utils/toast.js';
 
 export async function loadMarcas(select, selectedId = null) {
     await fetch("https://localhost:44379/api/Marca")
@@ -162,5 +162,5 @@ export function mapMed(medicamento, deleteConfirmModal, setMedicamentoIdToDelete
 function goToEditMed(id){
     localStorage.setItem("medicamentoId", id)
 
-    window.location.href = "../../pages/Medicamentos/editMedicamentoForm.html"
+    window.location.href = "./editMedicamentoForm.html"
 }

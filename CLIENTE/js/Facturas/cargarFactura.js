@@ -35,7 +35,7 @@ async function CargarEmpleados(){
         data.forEach(item => {
             const option = document.createElement("option");
             option.value = item.idPersonalCargosEstablecimientos; 
-            option.textContent = `${item.idPersonalNavigation.apellido} ${item.idPersonalNavigation.nombre} - ${item.idEstablecimientoNavigation.nombre}`; 
+            option.textContent = `${item.idPersonalNavigation.apellido} ${item.idPersonalNavigation.nombre} (${item.idEstablecimientoNavigation.nombre})`; 
             $employeeSelect.appendChild(option);
         });
     } catch (error) {
@@ -98,7 +98,7 @@ let idDetalleFactura = 1;
 document.getElementById("detalleId").value = idDetalleFactura;
 function agregarDetalle() {
    idDetalleFactura++;
-   // Obtener valores de los campos de detalle
+
    const idFactura = document.getElementById('detalleIdFactura').value;
    const idDispensacion = document.getElementById('detalleId').value;
    const idMedicamentoLote = document.getElementById('detalleMedicamento').value;
@@ -193,23 +193,23 @@ async function realizarFactura() {
             }
         }
 
-        // // Mostrar el toast
+
         const toastElement = document.getElementById("facturaToast");
         const toast = new bootstrap.Toast(toastElement);
         toast.show();
 
-        // Limpiar el formulario de pedido
+
         document.getElementById("empleado").value = "";
         document.getElementById("cliente").value = "";
         document.getElementById("fecha").value = "";
 
-        // Limpiar la tabla de detalles y resetear el contador de detalles
+
         dispensaciones = [];
         idDetalleFactura = 1;
         document.getElementById("detalleId").value = idDetalleFactura;
         actualizarTablaDetalles();
         
-        // Recargar el ID del pedido
+
         ObtenerUltimoId();
 
     } else {

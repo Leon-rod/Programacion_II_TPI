@@ -1,4 +1,4 @@
-import { ShowResult, ShowResultError } from './toast.js';
+import { ShowResult, ShowResultError } from '../Utils/toast.js';
 import { loadLaboratorios, loadMarcas, loadMonodrogas, loadPresentaciones, deleteMed, mapMed } from './auxMedicamentos.js';
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    function loadMedicamentos() {
-        fetch("https://localhost:44379/api/Medicamento")
+    async function loadMedicamentos() {
+        await fetch("https://localhost:44379/api/Medicamento")
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById("tableBody");
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error("Error al obtener los datos:", error));
     }
 
-    document.getElementById("searchMed").addEventListener("click", function() {
+    document.getElementById("searchMed").addEventListener("click", async function() {
         const filtros = {
             IdLaboratorio: document.getElementById("laboratorios").value,
             IdMarca: document.getElementById("marcas").value,
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } 
         }
             
-        fetch("https://localhost:44379/api/Medicamento/Filter", {
+        await fetch("https://localhost:44379/api/Medicamento/Filter", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(filtros)
