@@ -74,7 +74,7 @@ async function CargarMedicamentos(){
             if (item.idMedicamentoLoteNavigation != null){
                 const option = document.createElement("option");
                 option.value = item.idMedicamentoLote; 
-                option.textContent = item.idMedicamentoLoteNavigation.idMedicamentoNavigation.nombreComercial; 
+                option.textContent = `${item.idMedicamentoLoteNavigation.idMedicamentoNavigation.nombreComercial} (${item.idMedicamentoLoteNavigation.idMedicamentoNavigation.idPresentacionNavigation.nombrePresentacion})`; 
                 $detailMedicine.appendChild(option);
             }
         });
@@ -108,6 +108,8 @@ function agregarDetalle() {
    const cantidad = document.getElementById('detalleCantidad').value;
    const matricula = document.getElementById('detalleMatricula').value;
    const codigoValidacion = document.getElementById('detalleCodigo').value;
+   const medicamento = document.getElementById('detalleMedicamento').selectedOptions[0].text;
+   const cobertura = document.getElementById('detalleCobertura').selectedOptions[0].text;
    
    dispensaciones.push({
     idFactura,
@@ -118,7 +120,9 @@ function agregarDetalle() {
     precioUnitario,
     cantidad,
     matricula,
-    codigoValidacion
+    codigoValidacion,
+    medicamento,
+    cobertura
    });
    actualizarTablaDetalles();
    document.getElementById("detalleForm").reset();
@@ -134,8 +138,8 @@ function actualizarTablaDetalles() {
         row.innerHTML = `
             <td>${detalle.idFactura}</td>
             <td>${index + 1}</td>
-            <td>${detalle.idMedicamentoLote}</td>
-            <td>${detalle.idCobertura}</td>
+            <td>${detalle.medicamento}</td>
+            <td>${detalle.cobertura}</td>
             <td>${detalle.descuento}</td>
             <td>${detalle.precioUnitario}</td>
             <td>${detalle.cantidad}</td>
@@ -148,7 +152,7 @@ function actualizarTablaDetalles() {
 
 function eliminarDetalle(index) {
     dispensaciones.splice(index, 1);
-    dispensaciones.forEach((detalle, i) => detalle.idDetallePedido = i );
+    dispensaciones.forEach((detalle, i) => detalle.idDetalleFactura = i );
     actualizarTablaDetalles();
 }
 
@@ -167,20 +171,6 @@ async function realizarFactura() {
     });
 
     if (facturaResponse.ok) {
-        // await Promise.all(detalles.map(detalle => {
-        //     return fetch("https://localhost:44379/api/DetallePedido", {
-        //         method: "POST",
-        //         headers: { "Content-Type": "application/json" },
-        //         body: JSON.stringify({
-        //             idPedido: detalle.idPedido,
-        //             idDetallePedido: detalle.idDetallePedido,
-        //             idMedicamento: detalle.idMedicamento,
-        //             idProveedor: detalle.idProveedor,
-        //             precioUnitario: detalle.precioUnitario,
-        //             cantidad: detalle.cantidad
-        //         })
-        //     });
-        // }));
         for(var detalle of dispensaciones) {
             const detalleResponse = await fetch("https://localhost:44379/api/Dispensacion", {
                 method: "POST",
@@ -204,9 +194,9 @@ async function realizarFactura() {
         }
 
         // // Mostrar el toast
-        // const toastElement = document.getElementById("pedidoToast");
-        // const toast = new bootstrap.Toast(toastElement);
-        // toast.show();
+        const toastElement = document.getElementById("facturaToast");
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
 
         // Limpiar el formulario de pedido
         document.getElementById("empleado").value = "";
@@ -214,8 +204,9 @@ async function realizarFactura() {
         document.getElementById("fecha").value = "";
 
         // Limpiar la tabla de detalles y resetear el contador de detalles
-        detalles = [];
-        idDetalleCounter = 1;
+        dispensaciones = [];
+        idDetalleFactura = 1;
+        document.getElementById("detalleId").value = idDetalleFactura;
         actualizarTablaDetalles();
         
         // Recargar el ID del pedido

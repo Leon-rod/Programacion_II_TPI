@@ -27,6 +27,7 @@ namespace FarmaceuticaBack.Data.Repositories
             List<Stock> stocks =await _context.Stocks
                 .Include(s => s.IdMedicamentoLoteNavigation)
                 .Include(s => s.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                .Include(s => s.IdMedicamentoLoteNavigation.IdMedicamentoNavigation.IdPresentacionNavigation)
                 .Where(s => s.IdEstablecimiento == id)
                 .ToListAsync();
             List<Stock> result = new List<Stock>();
