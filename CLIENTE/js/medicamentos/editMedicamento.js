@@ -110,6 +110,7 @@ document.getElementById("btn-editMed").addEventListener("click", function() {
 
             console.log("Medicamento editado con éxito");    
             localStorage.setItem('status', 200);
+            localStorage.setItem('event', 'edit')
             window.location.href = "medicamentos.html"
 
         } else {
