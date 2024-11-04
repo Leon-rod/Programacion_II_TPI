@@ -49,20 +49,21 @@
     </nav>
     <div class="container mt-5">
         <h3 class="mt-4">Lista de Pedidos</h3>
+    
         <table class="table table-bordered mt-3 text-center table-striped" id="pedidosTable">
             <thead>
                 <tr>
-                    <th>N° Pedido</th>
-                    <th>Empleado</th>
-                    <th>Logística</th>
-                    <th>Fecha</th>
+                    <th>N° Pedido<br><input type="text" class="form-control" placeholder="Buscar N° Pedido" onkeyup="filtrarPedidos(0)"></th>
+                    <th>Empleado<br><input type="text" class="form-control" placeholder="Buscar Empleado" onkeyup="filtrarPedidos(1)"></th>
+                    <th>Logística<br><input type="text" class="form-control" placeholder="Buscar Logística" onkeyup="filtrarPedidos(2)"></th>
+                    <th>Fecha<br><input type="text" class="form-control" placeholder="Buscar Fecha" onkeyup="filtrarPedidos(3)"></th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
-
-
+    
+        
         <div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -74,7 +75,7 @@
                         <table class="table table-bordered text-center table-striped" id="detallesPedidoTable">
                             <thead>
                                 <tr>
-                                    <th>Medicamento</th>
+                                    <th>Producto</th>
                                     <th>Proveedor</th>
                                     <th>Precio Unitario</th>
                                     <th>Cantidad</th>
@@ -87,6 +88,8 @@
             </div>
         </div>
     </div>
+    
+    
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center border-top">
         <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
