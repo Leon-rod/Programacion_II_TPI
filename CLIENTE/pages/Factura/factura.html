@@ -3,114 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carga de Factura</title>
+    <title>Lista de Facturas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../../js/medicamentos/factura.js" defer></script>
+    <link rel="stylesheet" href="../../PEDIDOS/css/pedidos.css">
 </head>
-<body>
-
-<div class="container my-5">
-    <h2 class="mb-4">Carga de Factura</h2>
-
-    <!-- Formulario principal de la factura -->
-    <form id="facturaForm">
-        <div class="mb-3">
-            <label for="facturaId" class="form-label">ID de Factura</label>
-            <input type="number" class="form-control" id="facturaId" placeholder="Ingrese el ID de la factura" readonly>
-        </div>
-        <div class="mb-3">
-            <label for="cliente" class="form-label">Cliente</label>
-            <select class="form-select" id="cliente">
-                <option selected disabled selected>Seleccione un cliente</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="empleado" class="form-label">Empleado</label>
-            <select class="form-select" id="empleado">
-                <option selected disabled selected>Seleccione un empleado</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="fecha" class="form-label">Fecha</label>
-            <input type="date" class="form-control" id="fecha">
-        </div>
-    </form>
-
-    <h3 class="mt-4">Detalles de Factura</h3>
-
-    <!-- Formulario de detalle -->
-    <form id="detalleForm" onsubmit="event.preventDefault(); agregarDetalle();">
-        <div class="row">
-            <div class="col-md-2 mb-3">
-                <input type="text" class="form-control" id="detalleIdFactura" placeholder="ID de Factura" readonly>
-            </div>
-            <div class="col-md-2 mb-3">
-                <input type="text" class="form-control" id="detalleId" placeholder="ID de Detalle" readonly>
-            </div>
-            <div class="col-md-2 mb-3">
-                <select class="form-select" id="detalleMedicamento">
-                    <option selected>Medicamento</option>
-                </select>
-            </div>
-            <div class="col-md-2 mb-3">
-                <select class="form-select" id="detalleCobertura">
-                    <option selected>Cobertura</option>
-                </select>
-            </div>
-            <div class="col-md-2 mb-3">
-                <input type="number" class="form-control" id="detalleDescuento" placeholder="Descuento">
-            </div>
-            <div class="col-md-2 mb-3">
-                <input type="number" class="form-control" id="detallePrecio" placeholder="Precio Unitario">
-            </div>
-            <div class="col-md-2 mb-3">
-                <input type="number" class="form-control" id="detalleCantidad" placeholder="Cantidad">
-            </div>
-            <div class="col-md-2 mb-3">
-                <input type="text" class="form-control" id="detalleMatricula" placeholder="Matrícula">
-            </div>
-            <div class="col-md-2 mb-3">
-                <input type="text" class="form-control" id="detalleCodigo" placeholder="Código Validación" onkeydown="if(event.key === 'Enter') event.preventDefault()">
-            </div>
-            <div class="col-md-2 mb-3">
-                <button type="submit" class="btn btn-primary" id="agregarBtn">Agregar Detalle</button>
-            </div>
-        </div>
-    </form>
-
-    <!-- Tabla para mostrar los detalles -->
-    <table class="table table-bordered mt-3" id="detallesTable">
-        <thead>
-            <tr>
-                <th>ID de Factura</th>
-                <th>ID de Detalle</th>
-                <th>Medicamento</th>
-                <th>Cobertura</th>
-                <th>Descuento</th>
-                <th>Precio Unitario</th>
-                <th>Cantidad</th>
-                <th>Matrícula</th>
-                <th>Código Validación</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <button type="button" class="btn btn-success" onclick="realizarFactura()">Enviar Factura</button>
-
-    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-        <div id="facturaToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body" id="toastMessage">
-                    Facura realizada con éxito.
+<body class="bg-secondary">
+    <nav class="navbar navbar-dark bg-dark navbar-container">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Grupo Farmaceutico</a>
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú de opciones</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Transacciones</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Facturas</a></li>
+                                <li><a class="dropdown-item" href="#">Pedidos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Soporte</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Medicamentos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dashboard</a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Reporte 1</a></li>
+                                <li><a class="dropdown-item" href="#">Reporte 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h3 class="mt-4">Lista de Facturas</h3>
+        <table class="table table-bordered mt-3 text-center table-striped" id="facturasTable">
+            <thead>
+                <tr>
+                    <th>N° Factura</th>
+                    <th>Empleado</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+
+        <div class="modal fade" id="dispensacionModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detalleModalLabel">Detalles de la Factura</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered text-center table-striped" id="dispensacionesFacturaTable">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Marca</th>
+                                    <th>Medicamento</th>
+                                    <th>Cobertura</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Cantidad</th>
+                                    <th>Descuento</th>
+                                    <th>Matricula</th>
+                                    <th>Codigo Validacion</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
+    <footer class="d-flex flex-wrap justify-content-between align-items-center border-top">
+        <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/medicamentos/factura.js"></script>
 </body>
 </html>

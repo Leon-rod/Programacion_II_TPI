@@ -33,6 +33,11 @@ namespace FarmaceuticaBack.Data.Repositories
         public async Task<List<Dispensacion>> GetByIdFactura(int id)
         {
             List<Dispensacion> dispensacionList = await _context.Dispensaciones
+                .Include(d => d.IdProductoNavigation)
+                .Include(d => d.IdProductoNavigation.IdMarcaNavigation)
+                .Include(d => d.IdMedicamentoLoteNavigation)
+                .Include(d => d.IdMedicamentoLoteNavigation.IdMedicamentoNavigation)
+                .Include(d => d.IdCoberturaNavigation)
                 .Where(d => d.IdFactura == id)
                 .ToListAsync();
             return dispensacionList;
