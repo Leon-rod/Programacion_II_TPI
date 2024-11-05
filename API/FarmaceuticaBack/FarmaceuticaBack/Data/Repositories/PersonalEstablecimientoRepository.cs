@@ -19,6 +19,7 @@ namespace FarmaceuticaBack.Data.Repositories
         public async Task<List<PersonalCargosEstablecimiento>> GetAll()
         {
             List<PersonalCargosEstablecimiento> result = await _context.PersonalCargosEstablecimientos
+                .Include(p => p.IdCargoNavigation)
                 .Include(p => p.IdEstablecimientoNavigation)
                 .Include(p => p.IdPersonalNavigation)
                 .ToListAsync();
