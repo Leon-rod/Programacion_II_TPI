@@ -41,7 +41,7 @@ async function cargarDispensacionesFacturas(idFactura) {
             row.insertCell(3).textContent = dispensacion.idMedicamentoLote ?  dispensacion.idCoberturaNavigation.descripcion : "-";
             row.insertCell(4).textContent = "$" + dispensacion.precioUnitario; 
             row.insertCell(5).textContent = dispensacion.cantidad; 
-            row.insertCell(6).textContent = dispensacion.idMedicamentoLote ? dispensacion.descuento : "-"; 
+            row.insertCell(6).textContent = dispensacion.idMedicamentoLote ? dispensacion.descuento * 100 + '%' : "0%"; 
             row.insertCell(7).textContent = dispensacion.idMedicamentoLote ? dispensacion.matricula : "-"; 
             row.insertCell(8).textContent = dispensacion.idMedicamentoLote ? dispensacion.codigoValidacion : "-"; 
         });
