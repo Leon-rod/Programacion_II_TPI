@@ -733,6 +733,9 @@ public partial class FarmaceuticaContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("NUMERO");
             entity.Property(e => e.TipoDoc).HasColumnName("TIPO_DOC");
+            entity.Property(e => e.Psw)
+            .HasMaxLength(15)
+            .HasColumnName("PSW");
 
             entity.HasOne(d => d.IdBarrioNavigation).WithMany(p => p.Personals)
                 .HasForeignKey(d => d.IdBarrio)
