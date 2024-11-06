@@ -13,6 +13,7 @@ namespace FarmaceuticaBack.Data.Models
         public int IdMonodroga { get; set; }
         public int IdPresentacion { get; set; }
 
+        public bool Activo { get; set; }
         public string? NombreComercial { get; set; }
 
     }

@@ -14,17 +14,13 @@ namespace FarmaceuticaWebApi.Controllers
         {
             _service = service;
         }
-        [HttpPost("Filter")]
-        public async Task<IActionResult> GetByFilter([FromBody] MedicamentoFiltro filtro)
+        [HttpGet("Filter")]
+        public async Task<IActionResult> GetByFilter([FromQuery] MedicamentoFiltro filtro)
         {
-            if (filtro.IdMarca == 0 && filtro.IdPresentacion == 0 && filtro.IdLaboratorio == 0 && filtro.IdMonodroga == 0 && filtro.NombreComercial == null)
-            {
-                return Ok(await _service.GetAll());
-            }
-            else
-            {
+
+          
                 return Ok(await _service.GetByFiltro(filtro));
-            }
+            
 
         }
 

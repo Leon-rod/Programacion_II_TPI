@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     async function loadMedicamentos() {
-        await fetch("https://localhost:44379/api/Medicamento")
+        await fetch("https://localhost:44379/api/Medicamento/Filter?Activo=true")
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById("tableBody");
@@ -51,8 +51,11 @@ document.addEventListener("DOMContentLoaded", function() {
             IdMarca: document.getElementById("marcas").value,
             IdMonodroga: document.getElementById("monodrogas").value,
             IdPresentacion: document.getElementById("presentaciones").value,
-            NombreComercial: document.getElementById("nombreComercial").value 
+            NombreComercial: document.getElementById("nombreComercial").value,
+            Activo: document.getElementById("active").checked 
         };
+
+        console.log(filtros)
     
         for (let key in filtros) {
             if (filtros[key] === "Seleccionar") {
@@ -60,10 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
             } 
         }
             
-        await fetch("https://localhost:44379/api/Medicamento/Filter", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(filtros)
+        await fetch(`https://localhost:44379/api/Medicamento/Filter?IdMarca=${filtros.IdMarca}&IdLaboratorio=${filtros.IdLaboratorio}&NombreComercial=${filtros.NombreComercial}&IdMonodroga=${filtros.IdMonodroga}&IdPresentacion=${filtros.IdPresentacion}&Activo=${filtros.Activo}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
         })
         .then(response => response.json())
         .then(data => {
