@@ -1,6 +1,7 @@
 async function Loguear(){
     $username = document.getElementById("username").value;
     $password = document.getElementById("password").value;
+    let flag = false;
     try{
         const response = await fetch("https://localhost:44379/api/PersonalEstablecimiento");
         const data = await response.json();
@@ -8,11 +9,14 @@ async function Loguear(){
             if($username == item.idPersonalNavigation.nroDoc && $password == item.idPersonalNavigation.psw){
                 localStorage.setItem("nombrePersonal", `${item.idPersonalNavigation.nombre} ${item.idPersonalNavigation.apellido}`);
                 localStorage.setItem("cargoPersonal", item.idCargoNavigation.cargo1);
-                window.location.href = "../../index.html";
+                window.location.href = "../Pedidos/cargarPedido.html";
+                flag = true;
             }
         });
-        alert("Credenciales incorrectas");
-        LimpiarFormulario();
+        if(!flag){
+            alert("Credenciales incorrectas");
+            LimpiarFormulario();
+        }
     } catch (error) {
         console.log("Error al cargar empleados", error);
     }
