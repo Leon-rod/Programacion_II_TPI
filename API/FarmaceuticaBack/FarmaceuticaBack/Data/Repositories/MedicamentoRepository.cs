@@ -43,42 +43,40 @@ namespace FarmaceuticaBack.Data.Repositories
 
         public async Task<List<Medicamento>> GetByFiltro(MedicamentoFiltro oFiltro)
         {
-            IQueryable<Medicamento> query = _context.Medicamentos.AsQueryable(); 
-            Type t = oFiltro.GetType();
-            PropertyInfo[] properties = t.GetProperties();
-            foreach (PropertyInfo p in properties)
+            IQueryable<Medicamento> query = _context.Medicamentos.AsQueryable();
+
+            if (oFiltro.IdLaboratorio != 0)
             {
-                if (p.PropertyType == typeof(string))
-                {
-                    string nombre = (string)p.GetValue(oFiltro);
-                    if(nombre != "Seleccionar" && nombre != null && nombre != "string")
-                    {
-                        query = query.Include(m => m.IdLaboratorioNavigation)
-                             .Include(m => m.IdMonodrogaNavigation)
-                                .Include(m => m.IdMarcaNavigation)
-                                .Include(m => m.IdPresentacionNavigation)
-                                .Where(m => m.NombreComercial.Contains(nombre));
-                    }
-                }
-                else
-                {
-                    int? valor = (int)p.GetValue(oFiltro);
-
-                    if (valor != null && valor != 0)
-                    {
-
-                        // chicos para que esto funcione el filtro tiene que tener el mismo nombre que la propiedad de la clase
-                        query = query.Include(m => m.IdLaboratorioNavigation)
-                                .Include(m => m.IdMonodrogaNavigation)
-                                .Include(m => m.IdMarcaNavigation)
-                                .Include(m => m.IdPresentacionNavigation)
-                                .Where(m => EF.Property<int>(m, p.Name) == valor);
-                    }
-                }
-
+                query = query.Where(x => x.IdLaboratorio == oFiltro.IdLaboratorio);
             }
-            return await query.ToListAsync();
+            if (oFiltro.IdMarca != 0)
+            {
+                query = query.Where(x => x.IdMarca == oFiltro.IdMarca);
+            }
+            if(oFiltro.IdMonodroga != 0)
+            {
+                query = query.Where(x => x.IdMonodroga == oFiltro.IdMonodroga);
+            }
+            if (oFiltro.IdPresentacion != 0)
+            {
+                query = query.Where(x => x.IdPresentacion == oFiltro.IdPresentacion);
+            }
 
+            if(oFiltro.NombreComercial != null)
+            {
+                query = query.Where(x => x.NombreComercial.Contains(oFiltro.NombreComercial));
+            }
+
+         
+            
+                query = query.Where(x => x.Activo == oFiltro.Activo);
+           
+
+            return await query.Include(m => m.IdLaboratorioNavigation)
+                              .Include(m => m.IdMarcaNavigation)
+                              .Include(m => m.IdMonodrogaNavigation)
+                              .Include(m => m.IdPresentacionNavigation)
+                              .ToListAsync();
         }
 
         public async Task<int> GetLastId()
