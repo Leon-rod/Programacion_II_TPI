@@ -1,8 +1,13 @@
 function CargarNav(){
     const rol = localStorage.getItem("cargoPersonal");
+    const name = localStorage.getItem("nombrePersonal");
     const $navBar = document.getElementById("container__navBar");
-    $navBar.innerHTML = '';
+    const $userName = document.getElementById("userName");
+    const $userRol = document.getElementById("userRol");
 
+    $userName.innerText = name;
+    $userRol.innerText = rol;
+    $navBar.innerHTML = '';
     if(rol === "Asistente Administrativo"){
         const li = document.createElement("li");
         li.innerHTML = `<li class="nav-item dropdown">
