@@ -121,20 +121,38 @@ function agregarDetalle() {
    const medicamento = document.getElementById('detalleMedicamento').selectedOptions[0].text;
    const cobertura = document.getElementById('detalleCobertura').selectedOptions[0].text;
    
-   dispensaciones.push({
-    idFactura,
-    idDispensacion,
-    idMedicamentoLote,
-    idCobertura,
-    descuento,
-    precioUnitario,
-    cantidad,
-    subtotal,
-    matricula,
-    codigoValidacion,
-    medicamento,
-    cobertura
-   });
+   if (!idMedicamentoLote || !idCobertura || !precioUnitario || !cantidad || !matricula || !codigoValidacion) {
+    mostrarToast("Por favor, complete todos los campos del detalle.", "bg-danger");
+    return;
+    }
+
+
+    const detalleExistente = dispensaciones.find(detalle => 
+        detalle.idMedicamentoLote === idMedicamentoLote && 
+        detalle.idCobertura === idCobertura 
+    );
+
+    if (detalleExistente) {
+
+        detalleExistente.cantidad = parseFloat(detalleExistente.cantidad) + parseFloat(cantidad);
+    }else{
+        dispensaciones.push({
+            idFactura,
+            idDispensacion,
+            idMedicamentoLote,
+            idCobertura,
+            descuento,
+            precioUnitario,
+            cantidad,
+            subtotal,
+            matricula,
+            codigoValidacion,
+            medicamento,
+            cobertura
+           });
+    }
+
+
 
    const $subtotal = document.getElementById("subtotal");
    const $total = document.getElementById("total");
@@ -244,7 +262,7 @@ function CalcularSubtotal() {
     const precioUnitario = document.getElementById('detallePrecio').value;
     const cantidad = document.getElementById('detalleCantidad').value;
     const descuento = document.getElementById('detalleDescuento').value / 100;
-    if (precioUnitario != "" && cantidad != "" && descuento != "") {
+    if (precioUnitario != "" && cantidad != "" && descuento !== "") {
         const subtotal = Math.round((precioUnitario * cantidad - (precioUnitario*cantidad*descuento)));
         document.getElementById('subtotal').value = subtotal;
     }
@@ -256,4 +274,18 @@ function SetearFecha(){
     let mes = String(fechaActual.getMonth() + 1).padStart(2, '0'); 
     let dia = String(fechaActual.getDate()).padStart(2, '0');
     document.getElementById('fecha').value = `${anio}-${mes}-${dia}`;
+}
+
+
+function mostrarToast(mensaje, color = 'bg-success') {
+    const toastElement = document.getElementById("facturaToast");
+    const toastMessage = document.getElementById("toastMessage");
+
+
+    toastMessage.textContent = mensaje;
+    toastElement.className = `toast align-items-center text-white ${color} border-0`;
+
+
+    const toast = new bootstrap.Toast(toastElement);
+    toast.show();
 }

@@ -19,7 +19,7 @@ function CargarNav(){
                                 <li><a class="dropdown-item" href="../Medicamentos/medicamentos.html">Medicamentos</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca de/inicio.html">Acerca de</a></li>`;
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca_de/acerca.html">Acerca de</a></li>`;
         $navBar.appendChild(li);
 
         
@@ -56,7 +56,7 @@ function CargarNav(){
                                 <li><a class="dropdown-item" href="../Dashboard/reporteOS.html">Reporte mensual Obra Social</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca de/inicio.html">Acerca de</a></li>`;
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca_de/acerca.html">Acerca de</a></li>`;
         $navBar.appendChild(li);
 
 
@@ -72,7 +72,7 @@ function CargarNav(){
                                 <li><a class="dropdown-item" href="../Dashboard/reporteOS.html">Reporte mensual Obra Social</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca de/inicio.html">Acerca de</a></li>`;
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca_de/acerca.html">Acerca de</a></li>`;
         $navBar.appendChild(li);
 
 
