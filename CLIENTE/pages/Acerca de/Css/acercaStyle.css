@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0 0 15px 5px rgba(176, 190, 197, 0.8); /* Resplandor gris suave y luminoso */
+    border-radius: 10px;
+   
+}
+
+header {
+    background-color: #000000; /* Gris */
+    color: rgb(252, 252, 252);
+    padding: 20px;
+    text-align:right;
+    display: flex;
+    justify-content: center;
+     align-items: center;
+    border-bottom: 5px solid #fffcfc; /* Borde gris claro que resalta sobre el blanco */
+    box-shadow: 0 4px 15px rgba(44, 43, 43, 0.8);
+    border-radius: 10px; /* Ajusta este valor según sea necesario */ margin: 0px;
+    
+}
+h1, .titulo-derecha { margin: 0; } 
+.titulo-derecha { margin-left: auto; }
+
+header h1 { position: absolute; left: 50%; transform: translateX(-50%); }
+/* Estilo para el nombre en el lado derecho del header */
+.nombre-header {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Estilo para las imágenes en forma de círculo */
+.foto-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.persona {
+    display: flex;
+    align-items: center;
+    margin: 80px;
+    text-align: center;
+}
+
+.persona img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.informacion h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.informacion p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .foto-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .persona {
+        margin-bottom: 30px;
+    }
+    .nombre-header {
+        font-size: 1.5em; /* Reducir tamaño del texto en pantallas pequeñas */
+    }
+}
+footer {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo transparente */
+    color: #817373;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 1em;
+    border-bottom: 5px solid #fffcfc; /* Borde gris claro que resalta sobre el blanco */
+    box-shadow: 0 4px 15px rgba(44, 43, 43, 0.8);
+}
+.desarrolladores{
+    margin-top: 5rem;
+    margin-left: 37rem; font-size: 2em;
+    
+}
+
