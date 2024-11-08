@@ -208,6 +208,7 @@ async function realizarPedido() {
         
 
         cargarPedidoId();
+        SetearFecha();
     } else {
         mostrarToast("Error al enviar el pedido.", "bg-danger");
     }
