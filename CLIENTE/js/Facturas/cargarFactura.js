@@ -133,8 +133,15 @@ function agregarDetalle() {
     medicamento,
     cobertura
    });
+
+   const $subtotal = document.getElementById("subtotal");
+   const $total = document.getElementById("total");
+   if ($total.value == "") $total.value = "0";
+   const totalAcumulado = parseFloat($total.value) + parseFloat($subtotal.value);
    actualizarTablaDetalles();
+   
    document.getElementById("detalleForm").reset();
+   $total.value = totalAcumulado;
    document.getElementById("detalleId").value = idDetalleFactura;
    document.getElementById("detalleIdFactura").value = idFactura;
 }
@@ -161,7 +168,11 @@ function actualizarTablaDetalles() {
 }
 
 function eliminarDetalle(index) {
-    dispensaciones.splice(index, 1);
+    const $total = document.getElementById("total");
+    let totalAcumulado = parseFloat($total.value);
+    const dispensacionEliminada = dispensaciones.splice(index, 1);
+    totalAcumulado -= parseFloat(dispensacionEliminada[0].subtotal);
+    $total.value = totalAcumulado;
     dispensaciones.forEach((detalle, i) => detalle.idDetalleFactura = i );
     actualizarTablaDetalles();
 }

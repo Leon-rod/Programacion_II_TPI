@@ -79,6 +79,7 @@ function agregarDetalle() {
     const nombreProveedor = document.getElementById("detalleProveedor").selectedOptions[0].text;
     const precioUnitario = parseFloat(document.getElementById("detallePrecio").value);
     const cantidad = parseInt(document.getElementById("detalleCantidad").value);
+    const subtotal = document.getElementById("subtotal").value;
 
 
     if (!idMedicamento || !idProveedor || !precioUnitario || !cantidad) {
@@ -106,12 +107,18 @@ function agregarDetalle() {
             idProveedor,
             nombreProveedor,
             precioUnitario,
-            cantidad
+            cantidad,
+            subtotal
         });
     }
 
+    const $subtotal = document.getElementById("subtotal");
+    const $total = document.getElementById("total");
+    if ($total.value == "") $total.value = "0";
+    const totalAcumulado = parseFloat($total.value) + parseFloat($subtotal.value);
     actualizarTablaDetalles();
     document.getElementById("detalleForm").reset();
+    $total.value = totalAcumulado;
 }
 
 function actualizarTablaDetalles() {
@@ -134,7 +141,11 @@ function actualizarTablaDetalles() {
 }
 
 function eliminarDetalle(index) {
-    detalles.splice(index, 1);
+    const $total = document.getElementById("total");
+    let totalAcumulado = parseFloat($total.value);
+    const detalleEliminado = detalles.splice(index, 1);
+    totalAcumulado -= parseFloat(detalleEliminado[0].subtotal);
+    $total.value = totalAcumulado;
     detalles.forEach((detalle, i) => detalle.idDetallePedido = i + 1);
     actualizarTablaDetalles();
 }

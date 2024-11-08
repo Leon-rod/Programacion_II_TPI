@@ -12,7 +12,7 @@ body {
     color: #333;
     box-shadow: 0 0 15px 5px rgba(176, 190, 197, 0.8); /* Resplandor gris suave y luminoso */
     border-radius: 10px;
-   
+    
 }
 
 header {
@@ -96,9 +96,8 @@ footer {
     border-bottom: 5px solid #fffcfc; /* Borde gris claro que resalta sobre el blanco */
     box-shadow: 0 4px 15px rgba(44, 43, 43, 0.8);
 }
-.desarrolladores{
-    margin-top: 5rem;
-    margin-left: 37rem; font-size: 2em;
-    
-}
-
+.center-container { display: flex; justify-content: center; align-items: center; height: 100%; } 
+.desarrolladores { font-size: 2rem; /* Tamaño base para pantallas pequeñas */ text-align: center; } /* Media queries para diferentes tamaños de pantalla */ 
+@media (min-width: 600px) { .desarrolladores { font-size: 3rem;  /* Tamaño para pantallas medianas */ } }
+@media (min-width: 1024px) { .desarrolladores { font-size: 4rem; /* Tamaño para pantallas grandes */ } }
+.top-center { display: flex; justify-content: center; align-items: flex-start; height: 100%; padding-top: 20px; /* Ajusta este valor según necesites */ }
