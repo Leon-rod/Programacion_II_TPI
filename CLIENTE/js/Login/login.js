@@ -9,7 +9,7 @@ async function Loguear(){
             if($username == item.idPersonalNavigation.nroDoc && $password == item.idPersonalNavigation.psw){
                 localStorage.setItem("nombrePersonal", `${item.idPersonalNavigation.nombre} ${item.idPersonalNavigation.apellido}`);
                 localStorage.setItem("cargoPersonal", item.idCargoNavigation.cargo1);
-                window.location.href = "../Pedidos/cargarPedido.html";
+                window.location.href = "../Inicio/inicio.html";
                 flag = true;
             }
         });

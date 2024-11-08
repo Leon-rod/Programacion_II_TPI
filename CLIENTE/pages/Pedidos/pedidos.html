@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="/css/Pedidos/pedidos.css">
     <link rel="icon" href="/images/logoHead.jfif" type="image/png">
 </head>
-<body class="">
+<body>
     <nav class="navbar navbar-dark bg-dark navbar-container">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">FarmaCórdoba</a>
+            <a class="navbar-brand" href="../Inicio/inicio.html">FarmaCórdoba</a>
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú de opciones</h5>
@@ -32,36 +32,11 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="container__navBar">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Facturas</a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="../Factura/factura.html">Ver facturas</a></li>
-                                <li><a class="dropdown-item" href="../Factura/cargarFactura.html">Crear factura</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="../Pedidos/pedidos.html">Ver pedidos</a></li>
-                                <li><a class="dropdown-item" href="../Pedidos/cargarPedido.html">Crear pedido</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Soporte</a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="../Medicamentos/medicamentos.html">Medicamentos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dashboard</a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Reporte 1</a></li>
-                                <li><a class="dropdown-item" href="#">Reporte 2</a></li>
-                            </ul>
-                        </li>
+                        
                     </ul>
+                    <div class="text-center mt-auto mb-3">
+                        <button class="btn btn-danger" id="logoutButton">Cerrar sesión</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,7 +44,6 @@
 
     <div class="container mt-5">
         <h3 class="mt-4">Lista de Pedidos</h3>
-    
         <div class="table-responsive" style="max-height: 65vh; overflow-y: auto;">
             <table class="table table-bordered mt-3 text-center table-striped" id="pedidosTable">
                 <thead style="position: sticky; top: 0; background-color: #ffffff; z-index: 1;">
@@ -78,6 +52,7 @@
                         <th>Empleado<br><input type="text" class="form-control" placeholder="Buscar Empleado" onkeyup="filtrarPedidos(1)"></th>
                         <th>Logística<br><input type="text" class="form-control" placeholder="Buscar Logística" onkeyup="filtrarPedidos(2)"></th>
                         <th>Fecha<br><input type="text" class="form-control" placeholder="Buscar Fecha" onkeyup="filtrarPedidos(3)"></th>
+                        <th>Total</th> 
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -101,6 +76,7 @@
                                         <th>Proveedor</th>
                                         <th>Precio Unitario</th>
                                         <th>Cantidad</th>
+                                        <th>Subtotal</th> 
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -110,11 +86,8 @@
                 </div>
             </div>
         </div>
-        
     </div>
     
-    
-
     <footer class="d-flex flex-wrap justify-content-between align-items-center border-top text-center">
         <p class="col-md-4 mb-0 text-body-secondary text-center w-100">© 2024 FarmaCórdoba, UTN</p>
     </footer>

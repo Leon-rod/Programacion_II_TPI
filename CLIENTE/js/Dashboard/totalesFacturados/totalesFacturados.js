@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 mapView(register);
             });
 
-            updateChart(data); // Actualiza el gráfico con los datos filtrados
+            updateChart(data); 
         })
         .catch(error => console.error("Error al obtener los datos filtrados:", error));
     });
