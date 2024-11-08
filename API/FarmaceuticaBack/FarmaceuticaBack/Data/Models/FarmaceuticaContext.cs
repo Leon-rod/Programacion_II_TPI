@@ -1048,7 +1048,6 @@ public partial class FarmaceuticaContext : DbContext
                 .HasColumnType("decimal(38, 4)")
                 .HasColumnName("Importe_a_reintegrar");
             entity.Property(e => e.ObraSocial)
-                .IsRequired()
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("Obra_Social");

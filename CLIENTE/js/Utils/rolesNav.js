@@ -46,8 +46,8 @@ function CargarNav(){
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dashboard</a>
                             <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Reporte 1</a></li>
-                                <li><a class="dropdown-item" href="#">Reporte 2</a></li>
+                                <li><a class="dropdown-item" href="../Dashboard/totalesFacturados.html">Totales facturados por vendedor</a></li>
+                                <li><a class="dropdown-item" href="../Dashboard/reporteOS.html">Reporte mensual Obra Social</a></li>
                             </ul>
                         </li>`;
         $navBar.appendChild(li);
@@ -58,8 +58,8 @@ function CargarNav(){
         li.innerHTML = `<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dashboard</a>
                             <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Reporte 1</a></li>
-                                <li><a class="dropdown-item" href="#">Reporte 2</a></li>
+                                <li><a class="dropdown-item" href="../Dashboard/totalesFacturados.html">Totales facturados por vendedor</a></li>
+                                <li><a class="dropdown-item" href="../Dashboard/reporteOS.html">Reporte mensual Obra Social</a></li>
                             </ul>
                         </li>`;
         $navBar.appendChild(li);

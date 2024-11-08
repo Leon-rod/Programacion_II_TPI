@@ -7,7 +7,7 @@ namespace FarmaceuticaBack.Models;
 
 public partial class VReporteMensualObraSocial
 {
-    public string ObraSocial { get; set; }
+    public string? ObraSocial { get; set; }
 
     public decimal? ImporteAReintegrar { get; set; }
 

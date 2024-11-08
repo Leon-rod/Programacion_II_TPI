@@ -74,6 +74,15 @@ builder.Services.AddScoped<IProveedorService, ProveedorService>();
 builder.Services.AddScoped<IMedicamentoLoteRepository, MedicamentoLoteRepository>();
 builder.Services.AddScoped<IMedicamentoLoteService, MedicamentoLoteService>();
 
+builder.Services.AddScoped<IVTotalesFacturadosRepository, VTotalesFacturadosRepository>();
+builder.Services.AddScoped<IVTotalesFacturadosService, VTotalesFacturadosService>();
+
+builder.Services.AddScoped<IVReporteMensualOSRepository, VReporteMensualOSRepository>();
+builder.Services.AddScoped<IVReporteMensualOSService, VReporteMensualOSService>();
+
+builder.Services.AddScoped<IObraSocialRepository, ObraSocialRepository>();
+builder.Services.AddScoped<IObraSocialService, ObraSocialService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
