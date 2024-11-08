@@ -39,10 +39,10 @@ export async function mapView(register) {
     personalCell.textContent = register.personal;
 
     const totalFactCell = document.createElement("td");
-    totalFactCell.textContent = register.totalFacturado.toFixed(2);
+    totalFactCell.textContent = '$' + register.totalFacturado.toFixed(2);
 
     const topSellCell = document.createElement("td");
-    topSellCell.textContent = register.ventaMasCara.toFixed(2);
+    topSellCell.textContent = '$' + register.ventaMasCara.toFixed(2);
 
     row.appendChild(añoCell)
     row.appendChild(mesCell)

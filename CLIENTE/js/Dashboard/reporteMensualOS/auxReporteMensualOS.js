@@ -28,7 +28,7 @@ export async function mapViewOS(register) {
     obraSocial.textContent = register.obraSocial;
 
     const importeAReintegrar = document.createElement("td");
-    importeAReintegrar.textContent = register.importeAReintegrar.toFixed(2);
+    importeAReintegrar.textContent = '$' + register.importeAReintegrar.toFixed(2);
 
     row.appendChild(añoCell)
     row.appendChild(mesCell)
