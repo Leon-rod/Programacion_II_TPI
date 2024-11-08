@@ -83,12 +83,12 @@
             </div>
             <div class="col-md-2 mb-3">
                 <select class="form-select" id="detalleMedicamento">
-                    <option selected>Medicamento</option>
+                    <option selected disabled>Medicamento</option>
                 </select>
             </div>
             <div class="col-md-2 mb-3">
                 <select class="form-select" id="detalleCobertura">
-                    <option selected>Cobertura</option>
+                    <option selected disabled>Cobertura</option>
                 </select>
             </div>
             <div class="col-md-2 mb-3">
@@ -107,6 +107,9 @@
                 <input type="text" class="form-control" id="detalleCodigo" placeholder="Código Validación" onkeydown="if(event.key === 'Enter') event.preventDefault()">
             </div>
             <div class="col-md-2 mb-3">
+                <input type="number" class="form-control" id="subtotal" placeholder="Subtotal" disabled>
+            </div>
+            <div class="col-md-2 mb-3">
                 <button type="submit" class="btn btn-primary" id="agregarBtn">Agregar Detalle</button>
             </div>
         </div>
@@ -123,6 +126,7 @@
                 <th>Descuento</th>
                 <th>Precio Unitario</th>
                 <th>Cantidad</th>
+                <th>Subtotal</th>
                 <th>Matrícula</th>
                 <th>Código Validación</th>
                 <th>Acciones</th>

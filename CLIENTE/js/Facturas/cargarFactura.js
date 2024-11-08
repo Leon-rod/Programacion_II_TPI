@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
     CargarCoberturas();
 
     document.getElementById("empleado").addEventListener("change", CargarMedicamentos);
+
+    document.getElementById("detallePrecio").addEventListener("change", CalcularSubtotal);
+    document.getElementById("detalleDescuento").addEventListener("change", CalcularSubtotal);
+    document.getElementById("detalleCantidad").addEventListener("change", CalcularSubtotal);
 })
 
 
@@ -103,9 +107,10 @@ function agregarDetalle() {
    const idDispensacion = document.getElementById('detalleId').value;
    const idMedicamentoLote = document.getElementById('detalleMedicamento').value;
    const idCobertura = document.getElementById('detalleCobertura').value;
-   const descuento = document.getElementById('detalleDescuento').value;
+   const descuento = document.getElementById('detalleDescuento').value / 100;
    const precioUnitario = document.getElementById('detallePrecio').value;
    const cantidad = document.getElementById('detalleCantidad').value;
+   const subtotal = document.getElementById('subtotal').value;
    const matricula = document.getElementById('detalleMatricula').value;
    const codigoValidacion = document.getElementById('detalleCodigo').value;
    const medicamento = document.getElementById('detalleMedicamento').selectedOptions[0].text;
@@ -119,6 +124,7 @@ function agregarDetalle() {
     descuento,
     precioUnitario,
     cantidad,
+    subtotal,
     matricula,
     codigoValidacion,
     medicamento,
@@ -143,6 +149,7 @@ function actualizarTablaDetalles() {
             <td>${detalle.descuento}</td>
             <td>${detalle.precioUnitario}</td>
             <td>${detalle.cantidad}</td>
+            <td>${detalle.subtotal}</td>
             <td>${detalle.matricula}</td>
             <td>${detalle.codigoValidacion}</td>
             <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarDetalle(${index})" id="deleteBtn">Eliminar</button></td>
@@ -214,5 +221,15 @@ async function realizarFactura() {
 
     } else {
         alert("Error al enviar el pedido.");
+    }
+}
+
+function CalcularSubtotal() {
+    const precioUnitario = document.getElementById('detallePrecio').value;
+    const cantidad = document.getElementById('detalleCantidad').value;
+    const descuento = document.getElementById('detalleDescuento').value / 100;
+    if (precioUnitario != "" && cantidad != "" && descuento != "") {
+        const subtotal = Math.round((precioUnitario * cantidad - (precioUnitario*cantidad*descuento)));
+        document.getElementById('subtotal').value = subtotal;
     }
 }
