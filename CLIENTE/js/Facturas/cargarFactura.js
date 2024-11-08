@@ -213,24 +213,27 @@ async function realizarFactura() {
 
     if (facturaResponse.ok) {
         for(var detalle of dispensaciones) {
-            const detalleResponse = await fetch("https://localhost:44379/api/Dispensacion", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    idFactura: detalle.idFactura,
-                    idDispensacion: detalle.idDispensacion,
-                    idMedicamentoLote: detalle.idMedicamentoLote,
-                    idCobertura: detalle.idCobertura,
-                    descuento: detalle.descuento,
-                    precioUnitario: detalle.precioUnitario,
-                    cantidad: detalle.cantidad,
-                    matricula: detalle.matricula,
-                    codigoValidacion: detalle.codigoValidacion
-                })
-            });
-
-            if (!detalleResponse.ok) {
-                alert("Error al enviar una dispensacion.");
+            try {
+                const detalleResponse = await fetch("https://localhost:44379/api/Dispensacion", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        idFactura: detalle.idFactura,
+                        idDispensacion: detalle.idDispensacion,
+                        idMedicamentoLote: detalle.idMedicamentoLote,
+                        idCobertura: detalle.idCobertura,
+                        descuento: detalle.descuento,
+                        precioUnitario: detalle.precioUnitario,
+                        cantidad: detalle.cantidad,
+                        matricula: detalle.matricula,
+                        codigoValidacion: detalle.codigoValidacion
+                    })
+                });
+                if (!detalleResponse.ok) {
+                    mostrarToast("Error al enviar una dispensacion (id: " + detalle.idDispensacion + ") " + "Status: "+detalleResponse.status, "bg-danger");
+                }
+            } catch (error) {
+                mostrarToast("Error al intentar conectar con el servidor " + error, "bg-danger");
             }
         }
 
@@ -252,9 +255,10 @@ async function realizarFactura() {
         
 
         ObtenerUltimoId();
+        SetearFecha();
 
     } else {
-        alert("Error al enviar el pedido.");
+        mostrarToast("Error al enviar la factura " + "Status: "+facturaResponse.status, "bg-danger");
     }
 }
 
