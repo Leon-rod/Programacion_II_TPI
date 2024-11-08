@@ -14,7 +14,7 @@ async function Loguear(){
             }
         });
         if(!flag){
-            alert("Credenciales incorrectas");
+
             LimpiarFormulario();
         }
     } catch (error) {
@@ -23,11 +23,22 @@ async function Loguear(){
 }
 
 function LimpiarFormulario(){
+    
     document.getElementById("loginForm").reset();
+    mostrarToast("Credenciales incorrectas")
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
     document.getElementById("loginBtn").addEventListener("click", Loguear);
 })
 
+function mostrarToast(mensaje, color = 'bg-danger', duracion = 3000) {
+    const toastElement = document.getElementById("pedidoToast");
+    const toastMessage = document.getElementById("toastMessage");
 
+    toastMessage.textContent = mensaje;
+    toastElement.className = `toast align-items-center text-white ${color} border-0`;
+
+    const toast = new bootstrap.Toast(toastElement, { delay: duracion });
+    toast.show();
+}

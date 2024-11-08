@@ -2,6 +2,7 @@ function CargarNav(){
     const rol = localStorage.getItem("cargoPersonal");
     const name = localStorage.getItem("nombrePersonal");
     const $navBar = document.getElementById("container__navBar");
+
     const $userName = document.getElementById("userName");
     const $userRol = document.getElementById("userRol");
 
@@ -17,8 +18,11 @@ function CargarNav(){
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="../Medicamentos/medicamentos.html">Medicamentos</a></li>
                             </ul>
-                        </li>`;
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca de/inicio.html">Acerca de</a></li>`;
         $navBar.appendChild(li);
+
+        
     }
 
     if(rol === "Director tecnico"){
@@ -51,8 +55,11 @@ function CargarNav(){
                                 <li><a class="dropdown-item" href="../Dashboard/totalesFacturados.html">Totales facturados por vendedor</a></li>
                                 <li><a class="dropdown-item" href="../Dashboard/reporteOS.html">Reporte mensual Obra Social</a></li>
                             </ul>
-                        </li>`;
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca de/inicio.html">Acerca de</a></li>`;
         $navBar.appendChild(li);
+
+
     }
     if (rol === "Analista de Mercado Farmaceutico"){
 
@@ -64,8 +71,10 @@ function CargarNav(){
                                 <li><a class="dropdown-item" href="../Dashboard/totalesFacturados.html">Totales facturados por vendedor</a></li>
                                 <li><a class="dropdown-item" href="../Dashboard/reporteOS.html">Reporte mensual Obra Social</a></li>
                             </ul>
-                        </li>`;
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../Acerca de/inicio.html">Acerca de</a></li>`;
         $navBar.appendChild(li);
+
 
     }
 }

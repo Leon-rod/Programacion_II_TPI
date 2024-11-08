@@ -44,6 +44,7 @@ document.getElementById("btn-addMed").addEventListener("click", async function()
 
 
     const ventaLibre = document.querySelector('input[name="ventaLibre"]:checked').value === "true";
+
     const activo = document.querySelector('input[name="activo"]:checked').value === "true";
 
 
