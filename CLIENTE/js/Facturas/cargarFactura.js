@@ -91,6 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("empleado").addEventListener("change", CargarMedicamentos);
 
     AgregarSubtotal();
+
+    SetearFecha();
     
 })
 
@@ -246,4 +248,12 @@ function CalcularSubtotal() {
         const subtotal = Math.round((precioUnitario * cantidad - (precioUnitario*cantidad*descuento)));
         document.getElementById('subtotal').value = subtotal;
     }
+}
+
+function SetearFecha(){
+    let fechaActual = new Date();
+    let anio = fechaActual.getFullYear();
+    let mes = String(fechaActual.getMonth() + 1).padStart(2, '0'); 
+    let dia = String(fechaActual.getDate()).padStart(2, '0');
+    document.getElementById('fecha').value = `${anio}-${mes}-${dia}`;
 }
