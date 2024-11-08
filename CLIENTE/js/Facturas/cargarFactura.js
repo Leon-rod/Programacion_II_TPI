@@ -90,12 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("empleado").addEventListener("change", CargarMedicamentos);
 
-    document.getElementById("detallePrecio").addEventListener("change", CalcularSubtotal);
-    document.getElementById("detalleDescuento").addEventListener("change", CalcularSubtotal);
-    document.getElementById("detalleCantidad").addEventListener("change", CalcularSubtotal);
+    AgregarSubtotal();
+    
 })
 
-
+function AgregarSubtotal(){
+    document.getElementById("detallePrecio").addEventListener("keyup", CalcularSubtotal);
+    document.getElementById("detalleDescuento").addEventListener("keyup", CalcularSubtotal);
+    document.getElementById("detalleCantidad").addEventListener("keyup", CalcularSubtotal);
+}
 
 let dispensaciones = [];
 let idDetalleFactura = 1;

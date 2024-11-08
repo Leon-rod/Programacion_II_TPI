@@ -127,6 +127,7 @@ function actualizarTablaDetalles() {
             <td>${detalle.nombreProveedor}</td>
             <td>${detalle.precioUnitario}</td>
             <td>${detalle.cantidad}</td>
+            <td>${detalle.precioUnitario * detalle.cantidad}</td>
             <td><button type="button" class="btn btn-danger btn-sm" onclick="eliminarDetalle(${index})">Eliminar</button></td>
         `;
     });
@@ -201,10 +202,26 @@ async function realizarPedido() {
     }
 }
 
+function CalcularSubtotal() {
+    const precioUnitario = document.getElementById('detallePrecio').value;
+    const cantidad = document.getElementById('detalleCantidad').value;
+    if (precioUnitario != "" && cantidad != "") {
+        const subtotal = Math.round(precioUnitario * cantidad);
+        document.getElementById('subtotal').value = subtotal;
+    }
+}
+
+function AgregarSubtotal(){
+    document.getElementById("detallePrecio").addEventListener("keyup", CalcularSubtotal);
+    document.getElementById("detalleCantidad").addEventListener("keyup", CalcularSubtotal);
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     cargarPedidoId();
     cargarEmpleado();
     cargarLogistica();
     cargarMedicamento();
     cargarProveedor();
+    AgregarSubtotal();
 });
